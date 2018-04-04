@@ -1,0 +1,246 @@
+body{
+  background:none
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+
+}
+
+@font-face {
+  font-family: Kiona-Regular;
+  src: url('Kiona-Regular.ttf');
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width :  750px) {
+
+  .expandToDiv{
+    align-self:center;
+    font-size: 100%;
+    width: auto;
+  }
+
+  .divExpand{
+    display: flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:column;
+    flex-grow: 1;
+  }
+
+  .expandToDivIdioma{
+    align-self:center;
+    font-size: 100%;
+    height: 35px;
+    width: 100%;
+  }
+
+  .divExpandIdioma{
+    display: flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:row;
+    flex-grow: 1;
+  }
+
+  .topPagePanel{
+    width: 100%;
+    height: 174px;
+    background-color: #0c0d14;
+    display: flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:row;
+  }
+  .buttonImageTitle{
+    width:115px;
+    height:154px;
+    background:url('./ca/img/actura12_logo.png');
+    position:absolute;
+    left:25px;
+    top:10px;
+    padding: 0px;
+    margin:0px;
+    border: 0px;
+  }
+  .mainTitle{
+      font-size: 500%;
+      align-self:center;
+      color: #ffffff;
+      font-family: Kiona-Regular;
+  }
+  .catIco:before {
+    content: "\00a0";
+  }
+  .catIco{
+    background:url('./cat-flag.svg');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 1.33333333em;
+    display: inline-block;
+    line-height: 1em;
+  }
+  .icono{
+    padding-left: 5px;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (max-device-width : 750px)
+and (min-width :  375px) {
+    .expandToDiv{
+      align-self:center;
+      font-size: 100%;
+      width: auto;
+    }
+
+    .divExpand{
+      display: flex;
+      align-items:center;
+      align-content:center;
+      flex-direction:column;
+      flex-grow: 1;
+    }
+
+    .expandToDivIdioma{
+      align-self:center;
+      font-size: 100%;
+      height: 35px;
+      width: 100%;
+    }
+
+    .divExpandIdioma{
+      display: flex;
+      align-items:center;
+      align-content:center;
+      flex-direction:row;
+      flex-grow: 1;
+    }
+
+    .topPagePanel{
+      width: 100%;
+      height: 87px;
+      background-color: #0c0d14;
+      display: flex;
+      align-items:center;
+      align-content:center;
+      flex-direction:row;
+    }
+    .buttonImageTitle{
+      width:58px;
+      height:77px;
+      background:url('./ca/img/actura12_logo.png');
+      background-size: contain;
+      position:relative;
+      align-self: flex-start;
+      padding: 0px;
+      margin:0px;
+      margin-left: 10px;
+      margin-top:5px;
+      border: 0px;
+    }
+    .mainTitle{
+        font-size: 350%;
+        align-self:center;
+        color: #ffffff;
+        font-family: Kiona-Regular;
+    }
+    .catIco:before {
+      content: "\00a0";
+    }
+    .catIco{
+      background:url('./cat-flag.svg');
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      position: relative;
+      width: 1.33333333em;
+      display: inline-block;
+      line-height: 1em;
+    }
+    .icono{
+      padding-left: 5px;
+    }
+}
+
+@media only screen
+and (max-device-width : 375px){
+  .expandToDiv{
+    align-self:center;
+    font-size: 100%;
+    width: auto;
+  }
+
+  .divExpand{
+    display: flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:column;
+    flex-grow: 1;
+  }
+
+  .expandToDivIdioma{
+    align-self:center;
+    font-size: 65%;
+    height: 35px;
+    width: 100%;
+  }
+
+  .divExpandIdioma{
+    display: flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:row;
+    flex-grow: 1;
+  }
+
+  .topPagePanel{
+    width: 100%;
+    height: 87px;
+    background-color: #0c0d14;
+    display: flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:row;
+  }
+  .buttonImageTitle{
+    width:58px;
+    height:77px;
+    background:url('./ca/img/actura12_logo.png');
+    background-size: contain;
+    position:relative;
+    align-self: flex-start;
+    padding: 0px;
+    margin:0px;
+    margin-left: 10px;
+    margin-top:5px;
+    border: 0px;
+  }
+  .mainTitle{
+      font-size: 225%;
+      align-self:center;
+      color: #ffffff;
+      font-family: Kiona-Regular;
+  }
+  .catIco:before {
+    content: "\00a0";
+  }
+  .catIco{
+    background:url('./cat-flag.svg');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 1.33333333em;
+    display: inline-block;
+    line-height: 1em;
+  }
+  .icono{
+    padding-left: 5px;
+  }
+}
