@@ -1,5 +1,12 @@
+/**TODO: Revisar screen size! resize on windows peta. max-device-width no sta be!*/
+
+/*
+Bar top height: 174px;
+*/
+
+
 body{
-  background:none
+  background:none;
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -9,6 +16,23 @@ body{
 @font-face {
   font-family: Kiona-Regular;
   src: url('Kiona-Regular.ttf');
+}
+
+.desplegableTopDreta{
+  position:absolute;
+  top: 107px;
+  right:25px;
+  display: none;
+  align-items:center;
+  align-content:center;
+  flex-direction:column;
+  flex-grow: 1;
+  width: 150px;
+}
+.botoDesplegableIdiomes{
+  position:absolute;
+  top: 87px;
+  right:25px;
 }
 
 
@@ -37,7 +61,7 @@ and (min-width :  750px) {
     width: 100%;
   }
 
-  .divExpandIdioma{
+  .divMenu{
     display: flex;
     align-items:center;
     align-content:center;
@@ -65,10 +89,16 @@ and (min-width :  750px) {
     margin:0px;
     border: 0px;
   }
-  .mainTitle{
+  h1{
       font-size: 500%;
       align-self:center;
       color: #ffffff;
+      font-family: Kiona-Regular;
+  }
+  h2{
+      font-size: 250%;
+      align-self:center;
+      color: #000000;
       font-family: Kiona-Regular;
   }
   .catIco:before {
@@ -114,7 +144,7 @@ and (min-width :  375px) {
       width: 100%;
     }
 
-    .divExpandIdioma{
+    .divMenu{
       display: flex;
       align-items:center;
       align-content:center;
@@ -144,10 +174,16 @@ and (min-width :  375px) {
       margin-top:5px;
       border: 0px;
     }
-    .mainTitle{
+    h1{
         font-size: 350%;
         align-self:center;
         color: #ffffff;
+        font-family: Kiona-Regular;
+    }
+    h2{
+        font-size: 175%;
+        align-self:center;
+        color: #000000;
         font-family: Kiona-Regular;
     }
     .catIco:before {
@@ -191,7 +227,7 @@ and (max-device-width : 375px){
     width: 100%;
   }
 
-  .divExpandIdioma{
+  .divMenu{
     display: flex;
     align-items:center;
     align-content:center;
@@ -221,12 +257,20 @@ and (max-device-width : 375px){
     margin-top:5px;
     border: 0px;
   }
-  .mainTitle{
+  h1{
       font-size: 225%;
       align-self:center;
       color: #ffffff;
       font-family: Kiona-Regular;
   }
+
+  h2{
+      font-size: 185%;
+      align-self:center;
+      color: #000000;
+      font-family: Kiona-Regular;
+  }
+
   .catIco:before {
     content: "\00a0";
   }
