@@ -11,9 +11,6 @@ app.get('/es', function(req, res) {
 app.get('/en', function(req, res) {
   res.sendFile(__dirname + '/client/en/index.html');
 });
-app.get('/zh', function(req, res) {
-  res.sendFile(__dirname + '/client/zh/index.html');
-});
 
 app.use('/client', express.static(__dirname + '/client'));
 

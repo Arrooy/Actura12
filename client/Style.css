@@ -1,16 +1,10 @@
-/**TODO: Revisar screen size! resize on windows peta. max-device-width no sta be!*/
-
-/*
-Bar top height: 174px;
-*/
-
-
 body{
-  background:none;
+  background:#1C1C1C;
   width: 100%;
   height: 100%;
   margin: 0px;
-
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 @font-face {
@@ -18,273 +12,134 @@ body{
   src: url('Kiona-Regular.ttf');
 }
 
-.desplegableTopDreta{
-  position:absolute;
-  top: 107px;
-  right:25px;
-  display: none;
-  align-items:center;
-  align-content:center;
-  flex-direction:column;
-  flex-grow: 1;
-  width: 150px;
-}
-.botoDesplegableIdiomes{
-  position:absolute;
-  top: 87px;
-  right:25px;
+.PrimeraCara{
+  position: absolute;
+  top:0vh;
+  left:0vw;
+  width: 100%;
+  height: 100%;
+  background: green;
 }
 
+.SegundaCara{
+  position: absolute;
+  top:100vh;
+  left:0vw;
+  width: 100%;
+  height: 100%;
+  background: red;
+}
 
-/* Desktops and laptops ----------- */
-@media only screen
-and (min-width :  750px) {
+.TerceraCara{
+  position: absolute;
+  top:200vh;
+  left:0vw;
+  width: 100%;
+  height: 100%;
+  background: blue;
+}
 
-  .expandToDiv{
-    align-self:center;
-    font-size: 100%;
-    width: auto;
+.QuartaCara{
+  position: absolute;
+  top:300vh;
+  left:0vw;
+  width: 100%;
+  height: 100%;
+  background: yellow;
+}
+
+.mainTitle{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  color:white;
+  margin:10px;
+
+  position: absolute;
+  left: 50%;
+  top:48%;
+  z-index: 1;
+  transform: translate(-50%,-50%);
+}
+
+.animateTopIn{
+  animation: titleReshapeIn 0.5s ease-in-out 1 normal forwards;
+  transform-origin: top left;
+}
+
+.animateTopOut{
+  animation: titleReshapeIn 0.5s ease-in-out 1 reverse forwards;
+  transform-origin: top left;
+}
+
+.mainSubtitle{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color:white;
+
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%,-50%);
+}
+
+.scrollBar{
+  position: absolute;
+  top: 50vh;
+  right: 8%;
+  z-index: 1;
+  transform: translate(0px,-60px);
+}
+
+.scrollBar span {
+  display: block;
+  height: 18px;
+  width: 18px;
+  background: #FFFFFF;/*Selected #9B1617 unSelected*/
+  border-radius: 50%;
+  position: absolute;
+  right: 8%;
+}
+
+.scrollBar span.onZone {
+  background: #9B1617;
+  animation: scrollMove 0.5s ease-in-out 1;
+}
+
+.scrollBar span:nth-child(1) {
+  top:0px;
+}
+.scrollBar span:nth-child(2) {
+  top:40px;
+}
+.scrollBar span:nth-child(3) {
+  top:80px;
+}
+.scrollBar span:nth-child(4) {
+  top:120px;
+}
+
+@keyframes scrollMove {
+  0% {
+    transform: scale(1);
   }
 
-  .divExpand{
-    display: flex;
-    align-items:center;
-    align-content:center;
-    flex-direction:column;
-    flex-grow: 1;
+  50% {
+    transform: scale(1.2);
   }
 
-  .expandToDivIdioma{
-    align-self:center;
-    font-size: 100%;
-    height: 35px;
-    width: 100%;
-  }
-
-  .divMenu{
-    display: flex;
-    align-items:center;
-    align-content:center;
-    flex-direction:row;
-    flex-grow: 1;
-  }
-
-  .topPagePanel{
-    width: 100%;
-    height: 174px;
-    background-color: #0c0d14;
-    display: flex;
-    align-items:center;
-    align-content:center;
-    flex-direction:row;
-  }
-  .buttonImageTitle{
-    width:115px;
-    height:154px;
-    background:url('./ca/img/actura12_logo.png');
-    position:absolute;
-    left:25px;
-    top:10px;
-    padding: 0px;
-    margin:0px;
-    border: 0px;
-  }
-  h1{
-      font-size: 500%;
-      align-self:center;
-      color: #ffffff;
-      font-family: Kiona-Regular;
-  }
-  h2{
-      font-size: 250%;
-      align-self:center;
-      color: #000000;
-      font-family: Kiona-Regular;
-  }
-  .catIco:before {
-    content: "\00a0";
-  }
-  .catIco{
-    background:url('./cat-flag.svg');
-    background-size: contain;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 1.33333333em;
-    display: inline-block;
-    line-height: 1em;
-  }
-  .icono{
-    padding-left: 5px;
+  100% {
+    transform: scale(1);
   }
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (max-device-width : 750px)
-and (min-width :  375px) {
-    .expandToDiv{
-      align-self:center;
-      font-size: 100%;
-      width: auto;
-    }
-
-    .divExpand{
-      display: flex;
-      align-items:center;
-      align-content:center;
-      flex-direction:column;
-      flex-grow: 1;
-    }
-
-    .expandToDivIdioma{
-      align-self:center;
-      font-size: 100%;
-      height: 35px;
-      width: 100%;
-    }
-
-    .divMenu{
-      display: flex;
-      align-items:center;
-      align-content:center;
-      flex-direction:row;
-      flex-grow: 1;
-    }
-
-    .topPagePanel{
-      width: 100%;
-      height: 87px;
-      background-color: #0c0d14;
-      display: flex;
-      align-items:center;
-      align-content:center;
-      flex-direction:row;
-    }
-    .buttonImageTitle{
-      width:58px;
-      height:77px;
-      background:url('./ca/img/actura12_logo.png');
-      background-size: contain;
-      position:relative;
-      align-self: flex-start;
-      padding: 0px;
-      margin:0px;
-      margin-left: 10px;
-      margin-top:5px;
-      border: 0px;
-    }
-    h1{
-        font-size: 350%;
-        align-self:center;
-        color: #ffffff;
-        font-family: Kiona-Regular;
-    }
-    h2{
-        font-size: 175%;
-        align-self:center;
-        color: #000000;
-        font-family: Kiona-Regular;
-    }
-    .catIco:before {
-      content: "\00a0";
-    }
-    .catIco{
-      background:url('./cat-flag.svg');
-      background-size: contain;
-      background-position: 50%;
-      background-repeat: no-repeat;
-      position: relative;
-      width: 1.33333333em;
-      display: inline-block;
-      line-height: 1em;
-    }
-    .icono{
-      padding-left: 5px;
-    }
-}
-
-@media only screen
-and (max-device-width : 375px){
-  .expandToDiv{
-    align-self:center;
-    font-size: 100%;
-    width: auto;
+@keyframes titleReshapeIn {
+  0% {
+    transform: scale(1)translate(-50%,-50%);
   }
 
-  .divExpand{
-    display: flex;
-    align-items:center;
-    align-content:center;
-    flex-direction:column;
-    flex-grow: 1;
-  }
-
-  .expandToDivIdioma{
-    align-self:center;
-    font-size: 65%;
-    height: 35px;
-    width: 100%;
-  }
-
-  .divMenu{
-    display: flex;
-    align-items:center;
-    align-content:center;
-    flex-direction:row;
-    flex-grow: 1;
-  }
-
-  .topPagePanel{
-    width: 100%;
-    height: 87px;
-    background-color: #0c0d14;
-    display: flex;
-    align-items:center;
-    align-content:center;
-    flex-direction:row;
-  }
-  .buttonImageTitle{
-    width:58px;
-    height:77px;
-    background:url('./ca/img/actura12_logo.png');
-    background-size: contain;
-    position:relative;
-    align-self: flex-start;
-    padding: 0px;
-    margin:0px;
-    margin-left: 10px;
-    margin-top:5px;
-    border: 0px;
-  }
-  h1{
-      font-size: 225%;
-      align-self:center;
-      color: #ffffff;
-      font-family: Kiona-Regular;
-  }
-
-  h2{
-      font-size: 185%;
-      align-self:center;
-      color: #000000;
-      font-family: Kiona-Regular;
-  }
-
-  .catIco:before {
-    content: "\00a0";
-  }
-  .catIco{
-    background:url('./cat-flag.svg');
-    background-size: contain;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 1.33333333em;
-    display: inline-block;
-    line-height: 1em;
-  }
-  .icono{
-    padding-left: 5px;
+  100% {
+    transform: scale(0.4) translate(-50%,133vh);
   }
 }
+
+/*font-family: 'Roboto', sans-serif;*/

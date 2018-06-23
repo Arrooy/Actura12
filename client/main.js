@@ -1,73 +1,74 @@
-
+var oneTime = true;
+var animationSpeed = 600;
 $(document).ready(function() {
-  $("#content").show();
 
-  $("#desplegableIdiomesContent").hide();
-  $("#desplegableIdiomes").text("Idioma v");
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      xSize = w.innerWidth || e.clientWidth || g.clientWidth,
+      ySize = w.innerHeight|| e.clientHeight|| g.clientHeight;
 
-  $("#desplegableIdiomes").click(function(){
-    if(  $("#desplegableIdiomesContent").css("display") == "none"){
+  $(".scrollBar").children().on('click', function(){
 
-        $("#desplegableIdiomesContent").css("display","flex");
-        $("#desplegableIdiomes").text("Idioma ^");
+    $(".scrollBar").children().removeClass('onZone');
+    $(this).toggleClass('onZone');
 
-    }else{
-      $("#desplegableIdiomesContent").hide();
-      $("#desplegableIdiomes").text("Idioma v");
-    }
+      switch (this.id) {
+          case '2':
+            $(".mainSubtitle").css('display', "none");
+            $("html, body").animate({ scrollTop:  ySize }, animationSpeed, "swing");
+
+
+            $(".scrollBar").animate({top:3 * ySize / 2},animationSpeed,"swing");
+
+
+            $(".mainTitle").removeClass('animateTopOut');
+            $(".mainTitle").addClass('animateTopIn');
+
+            break;
+          case '3':
+            $("html, body").animate({ scrollTop:  2 * ySize },animationSpeed,"swing");
+            $(".scrollBar").animate({top : 5 * ySize / 2},animationSpeed,"swing");
+            break;
+          case '4':
+            $("html, body").animate({ scrollTop:  3 * ySize },animationSpeed,"swing");
+            $(".scrollBar").animate({top : 7 * ySize / 2},animationSpeed,"swing");
+            break;
+        default:
+
+          $(".mainTitle").removeClass('animateTopIn');
+          $(".mainTitle").addClass('animateTopOut');
+
+          $("html, body").animate({ scrollTop:  0 },animationSpeed,"swing",function(){
+            $(".mainSubtitle").css('display', "block");
+            $(".mainSubtitle").css('opacity', "0");
+            $(".mainSubtitle").animate({opacity:1}, 200, "swing");
+          });
+
+          $(".scrollBar").animate({top : ySize / 2},animationSpeed,"swing");
+
+      }
+
+    });
+
+    setInterval(function() {
+      xSize = w.innerWidth || e.clientWidth || g.clientWidth;
+      ySize = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      if(oneTime){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        oneTime = false;
+      }
+    }, 1000 / 25);
+
   });
 
-
-  $("#clickTitle").click(function(){
-    //MAIN STAGE
+  window.onload = function() {
+    oneTime = true;
+  };
+/*
+  $(this).on('webkitAnimationEnd', function() {
+    this.style.webkitAnimationPlayState = "paused";
   });
-
-
-  $("#nosotros").click(function(){
-
-    $("#nosotrosContent").show();//.css("display","box");
-    $("#calculadoraContent").hide();
-    $("#plantillaContent").hide();
-    $("#blogContent").hide();
-  });
-
-  $("#calculadora").click(function(){
-    $("#nosotrosContent").hide();
-    $("#calculadoraContent").show();//.css("display","box");
-    $("#plantillaContent").hide();
-    $("#blogContent").hide();
-  });
-
-  $("#plantilla").click(function(){
-    $("#nosotrosContent").hide();
-    $("#calculadoraContent").hide();
-    $("#plantillaContent").show();//.css("display","box");
-    $("#blogContent").hide();
-  });
-
-  $("#blog").click(function(){
-    $("#nosotrosContent").hide();
-    $("#calculadoraContent").hide();
-    $("#plantillaContent").hide();
-    $("#blogContent").show();//.css("display","box");
-  });
-
-  $("#espanol").click(function(){
-    location = "es";
-  });
-
-  $("#catala").click(function(){
-    location = location.origin;
-  });
-
-  $("#english").click(function(){
-    location = "en";
-  });
-
-  $("#chinese").click(function(){
-    location = "zh";
-  });
-
-
-
-});
+*/
