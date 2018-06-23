@@ -4,7 +4,7 @@ body{
   height: 100%;
   margin: 0px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 @font-face {
