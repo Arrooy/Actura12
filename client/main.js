@@ -50,7 +50,6 @@ $(document).ready(function() {
       }, animationSpeed, "swing");
 
       idiomasTriggered = false;
-
     }
   });
   $(".idiomaContainer").children().hover(function() {
@@ -59,7 +58,7 @@ $(document).ready(function() {
       $(".idiomaContainer").children().css("opacity", "0.5");
     }
     $(this).css("opacity", "1");
-  });
+  },function(){$(this).css("opacity", "0.5");});
 
   $(".scrollBar").children().on('click', function() {
     gestionaScroll(this);
@@ -144,6 +143,15 @@ var gestionaScroll = function(elemento) {
       $(".scrollBar").animate({
         top: 5 * ySize / 2
       }, animationSpeed, "swing");
+
+      $("#img1").css("left","-10px");
+
+      $("#img2").css("left","0%");
+      $("#img3").css("left","30%");
+      $("#img4").css("left","100%");
+
+      //$("#img5").css("left","-10px");
+
       break;
     case '4':
       $(".mainTitle").css("top", "303vh");
@@ -186,15 +194,24 @@ var variaIdioma = function() {
       //Castellano
       $('.mainSubtitle').text("Asesoramos personas");
       $('#titleNosaltres').text("Nosotros");
+      $('#titleClients').text("Clientes");
+      $('#titleMissio').text("Misión");
+      $('#titleContacte').text("Contacto");
       break;
     case '2':
       //English
       $('.mainSubtitle').text("We advise people");
-      $('#titleNosaltres').text("Us xd");
+      $('#titleNosaltres').text("Us");
+      $('#titleClients').text("Clients");
+      $('#titleMissio').text("Mission");
+      $('#titleContacte').text("Contact");
       break;
     default:
       //Catala
       $('.mainSubtitle').text("Assessorem persones");
       $('#titleNosaltres').text("Nosaltres");
+      $('#titleClients').text("Clients");
+      $('#titleMissio').text("Missió");
+      $('#titleContacte').text("Contacte");
   }
 }

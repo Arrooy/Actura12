@@ -5,8 +5,6 @@ body {
   margin: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family: 'Raleway';
-  font-weight: 100;
 }
 
 .Cara1 {
@@ -105,6 +103,9 @@ body {
   position: absolute;
   right: 8%;
 }
+.scrollBar span:hover {
+  cursor: pointer;
+}
 
 .scrollBar span.onZone {
   background: #9b1617;
@@ -172,6 +173,10 @@ body {
   display:inline;
 }
 
+.idiomaContainer p:hover{
+  cursor: pointer;
+}
+
 .idiomaContainer p:nth-child(1) {
   opacity: 0.5;
   padding-right:5px;
@@ -186,9 +191,6 @@ body {
 .idiomaContainer p:nth-child(3) {
   opacity: 0;
   display:none;
-}
-
-.titleBox{
 }
 
 .titleSpecial{
@@ -221,4 +223,37 @@ body {
   left: 50%;
   top: 10%;
   transform: translate(-50%,-50%);
+}
+
+.textNosaltres{
+  word-wrap: break-word;
+
+  font-family: 'Raleway';
+  font-weight: 100;
+  
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  transform: translate(-50%,-50%);
+}
+
+
+.imageComplex{
+  width: 500px;
+  height: 400px;
+  margin: 0px;
+  position: absolute;
+  top: 35%;
+}
+
+.fotoFooter{
+  font-family: 'Raleway';
+  font-weight: 100;
+  margin:3px;
+  text-align: center;
+}
+
+img{
+  vertical-align: middle;
 }
