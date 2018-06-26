@@ -7,6 +7,7 @@ var currentScroll = 1;
 
 var currentIdioma = 1;
 var idiomasTriggered = false;
+var weNeedAnUpadte = false;
 
 var w = window,
   d = document,
@@ -27,23 +28,40 @@ $(document).ready(function() {
     xSize = w.innerWidth || e.clientWidth || g.clientWidth,
     ySize = w.innerHeight || e.clientHeight || g.clientHeight;
 
-    $(".idiomaContainer").children().on('click', function() {
+  $(".idiomaContainer").children().on('click', function() {
+    if (idiomasTriggered === false) {
+      $(".idiomaContainer").children().css("display", "inline");
+      $(this).css("opacity", "0");
+
+      $(".idiomaContainer").children().animate({
+        opacity: 0.5
+      }, animationSpeed, "swing");
+
+      idiomasTriggered = true;
+    } else {
+      weNeedAnUpadte = true;
       currentIdioma = this.id.substring(1);
-      console.log("Current idioma is " + currentIdioma);
-      idiomasTriggered = !idiomasTriggered;
-    });
-    $(".idiomaContainer").children().hover(function() {
-      if(idiomasTriggered === true){
-        console.log("IDIOMAS TRIGGERED AND HOVER");
-      }
-    });
+      $(".idiomaContainer").children().css("display", "none");
+      $(".idiomaContainer").children().css("opacity", "0");
+
+      $(this).css("display", "inline");
+      $(this).animate({
+        opacity: 0.5
+      }, animationSpeed, "swing");
+
+      idiomasTriggered = false;
+
+    }
+  });
+  $(".idiomaContainer").children().hover(function() {
+    if (idiomasTriggered === true) {
+      currentIdioma = this.id.substring(1);
+      $(".idiomaContainer").children().css("opacity", "0.5");
+    }
+    $(this).css("opacity", "1");
+  });
 
   $(".scrollBar").children().on('click', function() {
-    if($('.TopBar').css('opacity') === '0'){
-      $('.TopBar').animate({
-        opacity: 1
-      }, 300, "linear");
-    }
     gestionaScroll(this);
   });
 
@@ -54,6 +72,10 @@ $(document).ready(function() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       oneTime = false;
+    }
+    if (weNeedAnUpadte) {
+      variaIdioma();
+      weNeedAnUpadte = false;
     }
   }, 1000 / 50);
 
@@ -94,15 +116,13 @@ var gestionaScroll = function(elemento) {
 
   switch (elemento.id) {
     case '2':
+
+      $(".mainTitle").css("font-size", "50px");
+      $(".mainTitle").css("top", "48%");
       $(".mainSubtitle").css('display', "none");
       $("html, body").animate({
         scrollTop: ySize
-      }, animationSpeed, "swing", function() {
-        //TOPBAR SHOW!
-        $('.TopBar').animate({
-          opacity: 1
-        }, 300, "linear");
-      });
+      }, animationSpeed, "swing");
 
       $(".scrollBar").animate({
         top: 3 * ySize / 2
@@ -115,8 +135,8 @@ var gestionaScroll = function(elemento) {
     case '3':
       $(".mainTitle").removeClass('animateTopIn')
 
-      $(".mainTitle").css("top","203vh");
-      $(".mainTitle").css("font-size","20px");
+      $(".mainTitle").css("top", "203vh");
+      $(".mainTitle").css("font-size", "20px");
 
       $("html, body").animate({
         scrollTop: 2 * ySize
@@ -126,7 +146,7 @@ var gestionaScroll = function(elemento) {
       }, animationSpeed, "swing");
       break;
     case '4':
-      $(".mainTitle").css("top","303vh");
+      $(".mainTitle").css("top", "303vh");
 
       $("html, body").animate({
         scrollTop: 3 * ySize
@@ -137,7 +157,7 @@ var gestionaScroll = function(elemento) {
       break;
     case '5':
 
-      $(".mainTitle").css("top","403vh");
+      $(".mainTitle").css("top", "403vh");
       $("html, body").animate({
         scrollTop: 4 * ySize
       }, animationSpeed, "swing");
@@ -146,8 +166,8 @@ var gestionaScroll = function(elemento) {
       }, animationSpeed, "swing");
       break;
     default:
-      $(".mainTitle").css("font-size","50px");
-      $(".mainTitle").css("top","48%");
+      $(".mainTitle").css("font-size", "50px");
+      $(".mainTitle").css("top", "48%");
 
       $(".mainSubtitle").css('display', "block");
       $(".mainTitle").removeClass('animateTopIn');
@@ -157,9 +177,24 @@ var gestionaScroll = function(elemento) {
       $(".scrollBar").animate({
         top: ySize / 2
       }, animationSpeed, "swing");
+  }
+}
 
-      $('.TopBar').animate({
-        opacity: 0
-      }, 300, "linear");
+var variaIdioma = function() {
+  switch (currentIdioma) {
+    case '1':
+      //Castellano
+      $('.mainSubtitle').text("Asesoramos personas");
+      $('#titleNosaltres').text("Nosotros");
+      break;
+    case '2':
+      //English
+      $('.mainSubtitle').text("We advise people");
+      $('#titleNosaltres').text("Us xd");
+      break;
+    default:
+      //Catala
+      $('.mainSubtitle').text("Assessorem persones");
+      $('#titleNosaltres').text("Nosaltres");
   }
 }

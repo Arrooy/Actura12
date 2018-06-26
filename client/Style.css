@@ -51,7 +51,7 @@ body {
   left: 0vw;
   width: 100%;
   height: 100%;
-  background: #e4e4e4;
+  background:#1c1c1c;
 }
 
 .mainTitle {
@@ -154,7 +154,7 @@ body {
 
 .TopBar {
   background: #1c1c1c;
-  opacity: 0;
+  opacity: 1;
   width: 100%;
   height: 60px;
 }
@@ -166,7 +166,6 @@ body {
   position: absolute;
   right: 8%;
   top: 2%;
-  transform: translate(-25%, -25%);
 }
 
 .idiomaContainer p{
@@ -174,13 +173,52 @@ body {
 }
 
 .idiomaContainer p:nth-child(1) {
-  /*opacity: 1;*/
+  opacity: 0.5;
+  padding-right:5px;
 }
 
 .idiomaContainer p:nth-child(2) {
-  /*opacity: 0;*/
+  opacity: 0;
+  display:none;
+  padding-right:5px;
 }
 
 .idiomaContainer p:nth-child(3) {
-  /*opacity: 0;*/
+  opacity: 0;
+  display:none;
+}
+
+.titleBox{
+}
+
+.titleSpecial{
+  color: #e4e4e4;
+  background-color: #1c1c1c;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%,-50%);
+}
+
+.titleSpecialBlanc{
+  color: #1c1c1c;
+  background-color: #e4e4e4;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%,-50%);
 }
