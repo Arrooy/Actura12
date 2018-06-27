@@ -20,7 +20,7 @@ var w = window,
 $(document).ready(function() {
 
   $("#1").toggleClass('onZone');
-
+  startImages();
   w = window,
     d = document,
     e = d.documentElement,
@@ -143,15 +143,6 @@ var gestionaScroll = function(elemento) {
       $(".scrollBar").animate({
         top: 5 * ySize / 2
       }, animationSpeed, "swing");
-
-      $("#img1").css("left","-10px");
-
-      $("#img2").css("left","0%");
-      $("#img3").css("left","30%");
-      $("#img4").css("left","100%");
-
-      //$("#img5").css("left","-10px");
-
       break;
     case '4':
       $(".mainTitle").css("top", "303vh");
@@ -214,4 +205,10 @@ var variaIdioma = function() {
       $('#titleMissio').text("Missió");
       $('#titleContacte').text("Contacte");
   }
+}
+
+var startImages = function(){
+  $("#img1").css("left","-250px");
+  $("#img2").css("left","300px");
+  $("#img3").css("left","750px");
 }
