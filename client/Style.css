@@ -303,13 +303,28 @@ img{
   text-align: center;
 }
 .inputForm{
-  color:  #1c1c1c;
+  width: 220px;
+  color:  #e4e4e4;
   font-family: 'Raleway';
   font-weight: 100;
   margin-left: 50%;
   transform: translate(-50%,0px);
   text-align: center;
+
+  outline: none;
+  background-color: #1c1c1c;
+  padding: 0px;
+  border-left-color: #1c1c1c;
+  border-left-width: 0px;
+  border-right-color: #1c1c1c;
+
+  border-bottom-color: red;
+  border-top-color: red;
+  word-wrap: break-word;
+  max-height: 10vh;
+  max-width: 50vw;
 }
 .margin{
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-align: left;
 }
