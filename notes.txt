@@ -6,3 +6,6 @@ El scroll es lineal. La primera pagina se salva.
 Animacion puntos agua, uno se axica, el otro se agranda.
 
 Idiomas desplazarse en lugar de aparecer.
+
+
+final: mozila & webkit adaptar

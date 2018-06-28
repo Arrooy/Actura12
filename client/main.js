@@ -112,7 +112,7 @@ $(window).bind('mousewheel DOMMouseScroll', function(event) {
 
 var gestionaScroll = function(elemento) {
   //$(".scrollBar").children().find("onZone");
-
+/*  $(".onZone").addClass("onZoneOut");*/
   $(".scrollBar").children().removeClass('onZone');
   $(elemento).toggleClass('onZone');
 
@@ -195,7 +195,7 @@ var variaIdioma = function() {
     case '2':
       //English
       $('.mainSubtitle').text("We advise people");
-      $('#titleNosaltres').text("Us");
+      $('#titleNosaltres').text("About Us");
       $('#titleClients').text("Clients");
       $('#titleMissio').text("Mission");
       $('#titleContacte').text("Contact");
