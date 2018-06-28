@@ -1,0 +1,6 @@
+Puntos de 2 colores. Siempre color contrario al bk.
+Puntos vacios de 9px. Los selecionados son de 18px. rojos.
+
+El scroll es lineal. La primera pagina se salva.
+
+Animacion puntos agua, uno se axica, el otro se agranda.

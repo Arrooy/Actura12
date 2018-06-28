@@ -110,6 +110,8 @@ $(window).bind('mousewheel DOMMouseScroll', function(event) {
 });
 
 var gestionaScroll = function(elemento) {
+  //$(".scrollBar").children().find("onZone");
+
   $(".scrollBar").children().removeClass('onZone');
   $(elemento).toggleClass('onZone');
 
