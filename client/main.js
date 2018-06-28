@@ -1,3 +1,4 @@
+
 var oneTime = true;
 var animationSpeed = 600;
 
@@ -31,7 +32,7 @@ $(document).ready(function() {
   $(".idiomaContainer").children().on('click', function() {
     if (idiomasTriggered === false) {
       $(".idiomaContainer").children().css("display", "inline");
-      $(this).css("opacity", "0");
+      //$(this).css("opacity", "0");
 
       $(".idiomaContainer").children().animate({
         opacity: 0.5
