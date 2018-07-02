@@ -99,17 +99,19 @@ $(document).ready(function() {
     $(".scrollBarHelper").children().css("opacity","0.5");
     $("#q" + this.id).css("opacity","1");
   });
+
   $(".scrollBarHelper").children().hover(function() {
     scrollOver();
     $(".scrollBarHelper").children().css("opacity","0.5");
     $(this).css("opacity","1");
   });
+
   $(".HotZone").hover(function() {
     scrollOver();
-  },function(){
+  },function() {
     scrollNotOver();
+    console.log("OUt");
   });
-
 });
 
 

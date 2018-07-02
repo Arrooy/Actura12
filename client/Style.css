@@ -264,11 +264,11 @@ body {
 
   font-family: 'Raleway';
   font-weight: 200;
-
+text-align: justify;
   position:absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  width: 50vw;
+  width: 25vw;
   transform: translate(-50%,-50%);
 }
 
@@ -298,17 +298,23 @@ img{
 }
 
 .btn {
-    border: none;
     background-color: inherit;
-    padding: 14px 28px;
+    padding: 5px 20px;
     font-size: 16px;
     cursor: pointer;
     margin-left: 50%;
+
+    border-image-source: linear-gradient(to right,rgba(38, 38, 38, 0.3),rgba(114, 114, 114, 1),rgba(38, 38, 38, 0.3));
+    border-width: 2pt;
+    border-image-slice: 1;
+
+    border-left-color: red;
+
     transform: translate(-50%,0px);
 }
 
 /* On mouse-over */
-.btn:hover {background: #cdc6c6;}
+.btn:hover {background: red;}
 
 .default {
   color:  #e4e4e4;
@@ -335,15 +341,17 @@ img{
   transform: translate(-50%,0px);
   text-align: center;
 
+  border-image-source: linear-gradient(to right,rgba(38, 38, 38, 0),rgba(114, 114, 114, 1),rgba(38, 38, 38, 0));
+  border-width: 2pt;
+  border-image-slice: 1;
+
   outline: none;
   background-color: #1c1c1c;
   padding: 0px;
-  border-left-color: #1c1c1c;
-  border-left-width: 0px;
-  border-right-color: #1c1c1c;
 
-  border-bottom-color: linear-gradient(rgba(38,38,38,0), rgba(38,38,38,1),rgba(38,38,38,0));
-  border-top-color: linear-gradient(rgba(38,38,38,0), rgba(38,38,38,1),rgba(38,38,38,0));
+  border-left-width: 0px;
+  border-right-width: 0px;
+
   word-wrap: break-word;
   max-height: 10vh;
   max-width: 50vw;
@@ -388,7 +396,7 @@ img{
 .HotZone{
   width: 250px;
   height:220px;
-  position:absolute;
+  position:fixed;
   top:50%;
   right: 9%;
   transform:translate(50%,-45%);
