@@ -2,6 +2,7 @@ var animationSpeed = 600;
 var titleSize = 80;
 var scrollNeeded = 10;
 
+var stopAll = false;
 
 var topBarON = false;
 var lastCase = '1';
@@ -74,7 +75,6 @@ $(document).ready(function() {
 
     $(".scrollBarHelper").children().on('click', function() {
       var id  = this.id.substring(1);
-      console.log("id is " + id);
       currentPage = id;
       gestionaScroll($("#" + id)[0]);
     });
@@ -107,7 +107,7 @@ $(document).ready(function() {
   });
 
   $(".HotZone").hover(function() {
-    scrollOver();
+    if(!stopAll)scrollOver();
   },function() {
     scrollNotOver();
   });
@@ -146,13 +146,17 @@ $(window).bind('mousewheel DOMMouseScroll', function(event) {
     // scroll down
     scrollDown++;
     scrollUp = 0;
-
-    if (scrollDown >= scrollNeeded) {
-      currentPage++;
-      if (currentPage >= 5) currentPage = 5;
-      gestionaScroll($('#' + currentPage)[0]);
-      scrollDown = 0;
+    if(currentPage == 5){
+      window.scrollBy(0,10);
+    }else{
+      if (scrollDown >= scrollNeeded) {
+        currentPage++;
+        if (currentPage >= 5) currentPage = 5;
+        gestionaScroll($('#' + currentPage)[0]);
+        scrollDown = 0;
+      }
     }
+
   }
 
   if (window.pageYOffset >= offsetInit) {
@@ -171,6 +175,19 @@ var topBarActivated = function() {
 
 var gestionaScroll = function(elemento) {
   scrollNotOver();
+  if(elemento.id === "3"){
+    $(".scrollBar").css("display","none");
+    $(".HotZone").css("display","none");
+    $(".scrollBarHelper").css("display","none");
+    stopAll = true;
+
+
+  }else{
+    $(".scrollBar").css("display","block");
+    $(".HotZone").css("display","block");
+    $(".scrollBarHelper").css("display","block");
+    stopAll = false;
+  }
   switch (elemento.id) {
     case '2':
 
