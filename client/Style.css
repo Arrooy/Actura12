@@ -294,7 +294,7 @@ body {
 
 .imageMissio{
   display: inline-block;
-  align: right;
+  padding-left: 50px;
   height: 384px;
 }
 

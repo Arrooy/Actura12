@@ -170,7 +170,7 @@ var topBarActivated = function() {
 }
 
 var gestionaScroll = function(elemento) {
-
+  scrollNotOver();
   switch (elemento.id) {
     case '2':
 
