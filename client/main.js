@@ -110,7 +110,6 @@ $(document).ready(function() {
     scrollOver();
   },function() {
     scrollNotOver();
-    console.log("OUt");
   });
 });
 
@@ -200,6 +199,11 @@ var gestionaScroll = function(elemento) {
           $(".scrollBar").children()[a].style.border = "";
         }
       }
+
+      $('.textNosaltres').animate({
+        top: ySize*0.6,
+        opacity:1
+      }, 1200, "swing");
 
       $("html, body").animate({
         scrollTop: ySize

@@ -264,12 +264,38 @@ body {
 
   font-family: 'Raleway';
   font-weight: 200;
-text-align: justify;
+
+  text-align: justify;
+
   position:absolute;
-  top: 60%;
+  top: 90%;
+  opacity: 0;
   left: 50%;
   width: 25vw;
   transform: translate(-50%,-50%);
+}
+
+.containerMissio{
+  position:absolute;
+  top: 27%;
+  left: 25%;
+  height: 50vh;
+  width: 50vw;
+}
+
+.textMissio{
+  word-wrap: break-word;
+  font-family: 'Raleway';
+  font-weight: 200;
+  text-align: justify;
+  width: 22vw;
+  display: inline-block;
+}
+
+.imageMissio{
+  display: inline-block;
+  align: right;
+  height: 384px;
 }
 
 .imageComplex{
@@ -284,9 +310,6 @@ text-align: justify;
   text-align: center;
 }
 
-img{
-  vertical-align: middle;
-}
 
 .Formulari{
   position: absolute;
@@ -332,6 +355,7 @@ img{
   transform: translate(-50%,0px);
   text-align: center;
 }
+
 .inputForm{
   width: 220px;
   color:  #e4e4e4;
@@ -356,11 +380,11 @@ img{
   max-height: 10vh;
   max-width: 50vw;
 }
+
 .margin{
   margin-bottom: 15px;
   text-align: left;
 }
-
 
 .TopBar {
   background-color: #1c1c1c;
@@ -379,7 +403,6 @@ img{
   position: fixed;
   top: 0;
 }
-
 
 .footerBox{
   text-align: center;
@@ -401,4 +424,11 @@ img{
   right: 9%;
   transform:translate(50%,-45%);
   z-index: 5;
+}
+
+.noSelec{
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
 }
