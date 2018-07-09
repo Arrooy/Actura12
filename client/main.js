@@ -240,6 +240,17 @@ var gestionaScroll = function(elemento) {
 
       topBarActivated();
 
+      $(".imageMissio").animate({
+         "padding-left": "50px",
+         opacity:1
+      },1200,"swing");
+
+      $(".textMissio").animate({
+        "padding-left": "60px",
+        opacity:1
+      },1200,"swing");
+
+
       $("html, body").animate({
         scrollTop: 3 * ySize
       }, animationSpeed, "swing");
@@ -326,9 +337,9 @@ var variaIdioma = function() {
 }
 
 var startImages = function() {
-  $("#img1").css("left", "-250px");
-  $("#img2").css("left", "300px");
-  $("#img3").css("left", "750px");
+  // $("#img1").css("left", "-250px");
+  // $("#img2").css("left", "300px");
+  // $("#img3").css("left", "750px");
 }
 
 

@@ -7,6 +7,11 @@ body {
   overflow-y: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
 .Cara1 {
   position: absolute;
   top: 0vh;
@@ -278,9 +283,9 @@ body {
 .containerMissio{
   position:absolute;
   top: 27%;
-  left: 25%;
+  left: 20%;
   height: 50vh;
-  width: 50vw;
+  width: 70vw;
 }
 
 .textMissio{
@@ -290,26 +295,42 @@ body {
   text-align: justify;
   width: 22vw;
   display: inline-block;
+  opacity:0;
 }
 
 .imageMissio{
   display: inline-block;
-  padding-left: 50px;
+  padding-left: 200px;
   height: 384px;
+  opacity:0;
+}
+
+.slider{
+  position:absolute;
+  top:30%;
+  width: 100%;
+  height: 60vh;
 }
 
 .imageComplex{
-  position:absolute;
-  top:30%;
+  width: 33.33%;
+  margin: 0px;
+  height:60vh;
+  float:left;
+}
+
+.clientsImage{
+  max-width:100%;
+  max-height:100%;
 }
 
 .fotoFooter{
   font-family: 'Raleway';
   font-weight: 200;
-  margin:3px;
+  margin: 0px;
+  padding-top: 3px;
   text-align: center;
 }
-
 
 .Formulari{
   position: absolute;
