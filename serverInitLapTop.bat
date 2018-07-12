@@ -1,3 +1,3 @@
-cd C:\Users\Arroyo\Desktop\Programacio\Treball\Actura12
+cd C:\Users\HobJob\Desktop\Actura12
 node app.js
 pause
