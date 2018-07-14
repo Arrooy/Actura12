@@ -1,5 +1,6 @@
 var animationSpeed = 600;
 var titleSize = 120;
+var titleResizedSize = 45;
 var scrollNeeded = 10;
 
 var stopAll = false;
@@ -39,7 +40,7 @@ var w = window,
 $(document).ready(function() {
 
   activateHelper = xSize > 850;
-  
+
   if(ySize >= 900) titleSize = 120;
   else titleSize = 80;
 
@@ -55,35 +56,14 @@ $(document).ready(function() {
     ySize = w.innerHeight || e.clientHeight || g.clientHeight;
 
   $(".idiomaContainer").children().on('click', function() {
-    if (idiomasTriggered === false) {
-      $(".idiomaContainer").children().css("display", "inline");
-      //$(this).css("opacity", "0");
-
-      $(".idiomaContainer").children().animate({
-        opacity: 0.5
-      }, animationSpeed, "swing");
-
-      idiomasTriggered = true;
-    } else {
       weNeedAnUpadte = true;
       currentIdioma = this.id.substring(1);
-      $(".idiomaContainer").children().css("display", "none");
-      $(".idiomaContainer").children().css("opacity", "0");
-
-      $(this).css("display", "inline");
-      $(this).css("opacity", "0.5");
-
-      idiomasTriggered = false;
-    }
   });
+
   $(".idiomaContainer").children().hover(function() {
-    if (idiomasTriggered === true) {
-      currentIdioma = this.id.substring(1);
-      $(".idiomaContainer").children().css("opacity", "0.5");
-    }
     $(this).css("opacity", "1");
   }, function() {
-    $(this).css("opacity", "0.5");
+    $(this).css("opacity", "0.7");
   });
 
   $(".lateralLButton").hover(function() {
@@ -247,13 +227,13 @@ $(window).bind('mousewheel DOMMouseScroll', function(event) {
     // scroll down
     scrollDown++;
     scrollUp = 0;
-  
+
     if (scrollDown >= scrollNeeded) {
       currentPage++;
       if (currentPage >= 5) currentPage = 5;
       gestionaScroll($('#' + currentPage)[0]);
       scrollDown = 0;
-    
+
     }
 
   }
@@ -296,8 +276,8 @@ var gestionaScroll = function(elemento) {
         $(".mainTitle").css("top", "50%");
         if (lastCase === '1') {
           $(".mainTitle").animate({
-            top: ySize + 30,
-            fontSize: '30px'
+            top: ySize + 40,
+            fontSize: titleResizedSize + 'px'
           }, animationSpeed, "swing", function() {
             $(".mainTitle").css("display", "none");
             $(".mainTitle2").css("display", "block");
@@ -618,7 +598,7 @@ var variaIdioma = function() {
       $('#tm5').text("The processing is done via e-mail and without maintenance fees nor commitment to stay.");
 
       $('#footerL').text("Open from Monday to Thursday from 9.00 to 14.00 and from 16.00 to 20.00 - Friday from 9.00 to 14.00");
-      
+
       break;
     default:
       //Castellano
@@ -656,9 +636,9 @@ var variaIdioma = function() {
       $('#tm3').text("En este segundo caso,");
       $('#tm4').text("¿Cómo lo hacemos?");
       $('#tm5').text("La tramitación se hace vía e-mail y sin cuotas de mantenimiento ni compromiso de permanencia.");
-  
+
       $('#footerL').text("Horario de lunes a jueves de 9.00 a 14.00 y de 16.00 a 20.00 - Viernes de 9.00 a 14.00");
-      
+
   }
 }
 
@@ -685,16 +665,16 @@ var submitForm = function(){
     $('#ff4').val("");
     var resp = "Message created:\n\n";
     resp += "From: @nouMailPrivat\n";
-    resp += "To: @actura12@actura12.com\n\n"; 
-    
+    resp += "To: @actura12@actura12.com\n\n";
+
     resp += "Header: Missatge desde la web de " + nom + " "+ cog + "\n";
-    resp += "Content: \nNom i cognoms: " + nom + " " + cog + "\nEmail: " + mail + "\nMissatge: \n"+ message + " \n";    
+    resp += "Content: \nNom i cognoms: " + nom + " " + cog + "\nEmail: " + mail + "\nMissatge: \n"+ message + " \n";
 
     alert(resp);
 
     //console.log("NEW FORM\n"+ nom + "\n"+ cog + "\n"+ mail + "\n"+ message + "\n");
   }else{
-    
+
     var error;
 
     if(currentIdioma == 1){
@@ -758,7 +738,7 @@ var submitForm = function(){
         //Castella
         error += "-> Mensaje\n";
       }
-    }    
+    }
 
     alert(error);
   }
