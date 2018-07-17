@@ -1,0 +1,60 @@
+body {
+  background: #1c1c1c;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.mainTitle {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 20vw;
+  color: #e4e4e4;
+  margin: 0px;
+  letter-spacing: 1px;
+  padding-top: 25vh;
+  text-align: center;
+}
+.mainSubtitle {
+  font-family: 'Montserrat';
+  font-weight: 200;
+  font-size: 5vw;
+  color: #e4e4e4;
+  text-align: center;
+  letter-spacing: 4px;
+  padding-bottom: 5vh;
+}
+
+.noSelec {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+
+.text{
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 5vw;
+  color: #e4e4e4;
+  text-align: center;
+}
+
+.text1{
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 5vw;
+  color: #e4e4e4;
+  text-align: center;
+  
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}

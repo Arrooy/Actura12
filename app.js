@@ -6,6 +6,11 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
+
+app.get('/phone', function(req, res) {
+  res.sendFile(__dirname + '/client/indexPhone.html');
+});
+
 app.use('/client', express.static(__dirname + '/client'));
 
 serv.listen(process.env.PORT || 2000);

@@ -37,6 +37,11 @@ var w = window,
   xSize = w.innerWidth || e.clientWidth || g.clientWidth,
   ySize = w.innerHeight || e.clientHeight || g.clientHeight;
 
+if(xSize < 600 || ySize < 520){
+  document.location.href = "phone";
+}
+
+
 $(document).ready(function() {
 
   activateHelper = xSize > 850;
@@ -114,12 +119,6 @@ $(document).ready(function() {
     submitForm();
   });
 
-  $(".scrollBarHelper").children().on('click', function() {
-    var id = this.id.substring(1);
-    currentPage = id;
-    gestionaScroll($("#" + id)[0]);
-  });
-
   setInterval(function() {
     xSize = w.innerWidth || e.clientWidth || g.clientWidth;
     ySize = w.innerHeight || e.clientHeight || g.clientHeight;
@@ -170,6 +169,26 @@ $(document).ready(function() {
       scrollOver();
       $(".scrollBarHelper").children().css("opacity", "0.5");
       $("#q" + this.id).css("opacity", "1");
+    });
+
+
+    $(".scrollBarHelper").children().on('click', function() {
+      var id = this.id.substring(1);
+      currentPage = id;
+      gestionaScroll($("#" + id)[0]);
+    });
+
+
+    $(".scrollBarHelper2").children().on('click', function() {
+      var id = this.id.substring(1);
+      currentPage = id;
+      gestionaScroll($("#" + id)[0]);
+    });
+
+    $(".scrollBarHelper2").children().hover(function() {
+      scrollOver();
+      $(".scrollBarHelper").children().css("opacity", "0.5");
+      $("#q" + (this.id.substring(1))).css("opacity", "1");
     });
 
     $(".scrollBarHelper").children().hover(function() {
