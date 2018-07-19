@@ -53,6 +53,15 @@ body {
   background: #1c1c1c;
 }
 
+.Cara6 {
+  position: absolute;
+  top: 500vh;
+  left: 0vw;
+  width: 100%;
+  height: 100%;
+  background: #1c1c1c;
+}
+
 .mainTitle {
   font-family: 'Montserrat';
   font-weight: 400;
@@ -76,6 +85,17 @@ body {
   letter-spacing: 1px;
   text-align: center;
   padding-top: 12px;
+}
+
+.arrow{
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow :hover{
+  cursor: pointer;
 }
 
 .mainSubtitle {
@@ -116,6 +136,10 @@ body {
   padding-top: 18px;
 }
 
+.scrollBarHelper p:nth-child(6) {
+  padding-top: 18px;
+}
+
 .scrollBarHelper p:hover {
   cursor: pointer;
 }
@@ -151,7 +175,11 @@ body {
   padding-top: 18px;
 }
 
-.scrollBarHelper2 p:hover {
+.scrollBarHelper2 p:nth-child(6) {
+  padding-top: 18px;
+}
+
+.scrollBarHelper2 :hover {
   cursor: pointer;
 }
 
@@ -224,6 +252,10 @@ body {
 
 .scrollBar span:nth-child(5) {
   top: 160px;
+}
+
+.scrollBar span:nth-child(6) {
+  top: 200px;
 }
 
 @keyframes scrollMove {
@@ -377,7 +409,7 @@ body {
   background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
   opacity: 0;
   z-index: 100;
-}
+} 
 
 .Formulari {
   position: absolute;
@@ -465,19 +497,30 @@ body {
   position: fixed;
   top: 0;
 }
-
-.footerBox {
-  text-align: center;
+.spacer{
+  padding-top: 40vh;
+}
+.spacer2{
   position: absolute;
-  bottom: 0%;
-  left: 50%;
+  bottom: 5%;
+  left: 0%;
+  right: 0%;
 }
 
-.footer {
+.textInfo {
   color: #e4e4e4;
   font-family: 'Raleway';
   font-weight: 200;
-  transform: translate(-50%, -50%);
+  font-size: 25px;
+  text-align: center;
+}
+
+.tiAdd{
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
 }
 
 
@@ -505,6 +548,7 @@ body {
    margin-top: 0px;
 }
 
+
 /**********************************************/
 
 .mimageMissio{
@@ -518,7 +562,7 @@ body {
 
 .mtextNosaltres{
   width: 440px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .mmainTitle{

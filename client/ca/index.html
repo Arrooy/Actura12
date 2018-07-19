@@ -27,14 +27,16 @@
 </head>
 
 <body>
-	<h1 class="mainTitle mmainTitle noSelec">Actura<span style="color:#9b1617;padding-left:10px;">12</span></h1>
+<!-- <h1 class="mainTitle mmainTitle noSelec">Actura<span style="color:#9b1617;padding-left:10px;">12</span></h1> -->
+	<h1 class="mainTitle mmainTitle noSelec">Actura<img id="titleImage" style="padding-left:15px" src="/client/ca/img/logoDone.png" height="80px" ></h1>
 	<div class="HotZone"></div>
 	<div class="Cara1">
-		<div class="idiomaContainer">
+		<div class="idiomaContainer noSelec">
 			<p id="i1">Català</p>
 			<p id="i2">English</p>
 			<p id="i3">Castellano</p>
 		</div>
+		<img src="/client/ca/img/arrow.svg" alt="Go to next page" class="arrow">
 		<h2 class="mainSubtitle mmainSubtitle noSelec">Assessorem persones</h2>
 	</div>
 
@@ -44,6 +46,7 @@
 		<span id="3"></span>
 		<span id="4"></span>
 		<span id="5"></span>
+		<span id="6"></span>
 	</div>
 
 	<div class="scrollBarHelper2">
@@ -52,6 +55,7 @@
 		<div id="x3" class="scrollBarText2" style="width:150px;height:40px;"></div>
 		<div id="x4" class="scrollBarText2" style="width:150px;height:40px;"></div>
 		<div id="x5" class="scrollBarText2" style="width:150px;height:40px;"></div>
+		<div id="x6" class="scrollBarText2" style="width:150px;height:40px;"></div>
 	</div>
 
 	<div class="scrollBarHelper">
@@ -60,11 +64,13 @@
 		<p id="q3" class="scrollBarText noSelec">CLIENTS</p>
 		<p id="q4" class="scrollBarText noSelec">MISSIÓ</p>
 		<p id="q5" class="scrollBarText noSelec">CONTACTE</p>
+		<p id="q6" class="scrollBarText noSelec">CONTACTE</p>
 	</div>
 	<div class="Cara2">
 
 		<div class="TopBar" id="navbar">
-			<h1 class="mainTitle2 noSelec">Actura<span style="color:#9b1617;padding-left:10px;">12</span></h1>
+			<!--<h1 class="mainTitle2 noSelec">Actura<span style="color:#9b1617;padding-left:10px;">12</span></h1>-->
+			<h1 class="mainTitle2 noSelec">Actura<img id="titleImage" style="padding-left:15px" src="/client/ca/img/logoDone.png" height="45px" ></h1>
 		</div>
 
 		<h3 class="titleSpecial mtitleSpecial noSelec" id="titleNosaltres">NOSALTRES</h3>
@@ -86,33 +92,53 @@
 			<div id="img1" class="imageComplex">
 				<div class="lateralLButton"></div>
 				<div class="lateralRButton"></div>
-				<img id="img1C" class="clientsImage" src="/client/ca/img/CLIENTS 1.jpg" />
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 1.jpg" />
 				<h4 class="fotoFooter" id="im1">Actores</h4>
 			</div>
 
 			<div id="img2" class="imageComplex">
-				<img id="img2C" class="clientsImage" src="/client/ca/img/CLIENTS 2.jpg" />
-				<h4 class="fotoFooter" id="im2">Guitarristas</h4>
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 2.jpg" />
+				<h4 class="fotoFooter" id="im2">--</h4>
 			</div>
 
 			<div id="img3" class="imageComplex">
-				<img id="img3C" class="clientsImage" src="/client/ca/img/CLIENTS 3.jpg" />
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 3.jpg" />
 				<h4 class="fotoFooter" id="im3">Productoras</h4>
 			</div>
 
 			<div id="img4" class="imageComplex">
-				<img id="img4C" class="clientsImage" src="/client/ca/img/CLIENTS 4.jpg" />
-				<h4 class="fotoFooter" id="im4">Pianistas</h4>
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 4.jpg" />
+				<h4 class="fotoFooter" id="im4">Músics</h4>
 			</div>
 
 			<div id="img5" class="imageComplex">
-				<img id="img5C" class="clientsImage" src="/client/ca/img/CLIENTS 5.jpg" />
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 5.jpg" />
 				<h4 class="fotoFooter" id="im5">Disc Jockeys</h4>
 			</div>
 
 			<div id="img6" class="imageComplex">
-				<img id="img6C" class="clientsImage" src="/client/ca/img/CLIENTS 6.jpg" />
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 6.jpg" />
 				<h4 class="fotoFooter" id="im6">Cantantes</h4>
+			</div>
+
+			<div id="img7" class="imageComplex">
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 7.jpg" />
+				<h4 class="fotoFooter" id="im7">Cantantes</h4>
+			</div>
+
+			<div id="img8" class="imageComplex">
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 8.jpg" />
+				<h4 class="fotoFooter" id="im8">Cantantes</h4>
+			</div>
+
+			<div id="img9" class="imageComplex">
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 9.jpg" />
+				<h4 class="fotoFooter" id="im9">Cantantes</h4>
+			</div>
+
+			<div id="img10" class="imageComplex">
+				<img class="clientsImage" src="/client/ca/img/CLIENTS 10.jpg" />
+				<h4 class="fotoFooter" id="im10">Cantantes</h4>
 			</div>
 		</div>
 
@@ -143,17 +169,18 @@
 			<h4 class="FormulariTitle noSelec" id="f4">Missatge</h4>
 			<textarea name="message" rows="4" cols="30" class="inputForm margin" id="ff4"></textarea>
 			<button class="btn default" id="f5">Enviar</button>
-
+			<form method="get" action="/client/ca/fitxaTreballador.pdf">
+			 <button class="btn default" style="margin-top:25px;" type="submit">Descarregar formulari</button>
+			</form>
 		</div>
+	</div>
 
-		<footer class="footerBox mfooter">
-			<p class="footer">actura12@actura12.com</p>
-			<p class="footer">Tf 93 363 05 23 - 626 08 08 81</p>
-			<p class="footer">C/ Montnegre 18-24 esc. A entresuelo 1ª 08029 Barcelona</p>
-			<!--COMO LLEGAR-> href="https://www.google.es/maps/dir/''/actura+12/data=!4m5!4m4!1m0!1m2!1m1!1s0x12a49878a5cfac67:0x6cd8128b9057e357?sa=X&ved=0ahUKEwj2yM-yvKHcAhUMkRQKHRY1DKUQ9RcIhQEwDg"-->
-			<p class="footer" id="footerL">Horari de dilluns a dijous de 9.00 a 14.00 i de 16.00 a 20.00 - Divendres de 9.00 a 14.00</p>
-		</footer>
-
+	<div class="Cara6">
+		<h3 class="titleSpecialBlanc mtitleSpecial noSelec" id="titleContacte">CONTACTE</h3>
+		<p class="spacer textInfo ">Tf 93 363 05 23 - 626 08 08 81</p>
+		<p class="textInfo">actura12@actura12.com</p>
+		<a href="https://www.google.es/maps/dir/''/actura+12/data=!4m5!4m4!1m0!1m2!1m1!1s0x12a49878a5cfac67:0x6cd8128b9057e357?sa=X&ved=0ahUKEwj2yM-yvKHcAhUMkRQKHRY1DKUQ9RcIhQEwDg" class="textInfo tiAdd">C/ Montnegre 18-24 esc. A entresuelo 1ª 08029 Barcelona</a>
+		<p class="spacer2 textInfo" id="footerL">Horari de dilluns a dijous de 9.00 a 14.00 i de 16.00 a 20.00 - Divendres de 9.00 a 14.00</p>
 	</div>
 </body>
 

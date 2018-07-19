@@ -1,7 +1,7 @@
 var animationSpeed = 600;
 var titleSize = 120;
 var titleResizedSize = 45;
-var scrollNeeded = 10;
+var scrollNeeded = 20;
 
 var stopAll = false;
 
@@ -29,7 +29,7 @@ var currentIdioma = 1;
 var idiomasTriggered = false;
 var weNeedAnUpadte = false;
 var offsetInit = 0;
-
+var phoneOn = false;
 var w = window,
   d = document,
   e = d.documentElement,
@@ -39,6 +39,10 @@ var w = window,
 
 if(xSize < 600 || ySize < 520){
   document.location.href = "phone";
+  phoneOn = true;
+}else if(phoneOn){
+  document.location.href = "";
+  phoneOn = false;
 }
 
 
@@ -46,8 +50,13 @@ $(document).ready(function() {
 
   activateHelper = xSize > 850;
 
-  if(ySize >= 900) titleSize = 120;
-  else titleSize = 80;
+  if(ySize >= 900){
+     titleSize = 120;
+     $("#titleImage").css("height","120px");
+  }else{
+    titleSize = 80;
+    $("#titleImage").css("height","80px");
+  }
 
   startImages();
   $("#1").toggleClass('onZone');
@@ -104,6 +113,7 @@ $(document).ready(function() {
        nextFoto(true);
       }
   });
+
   $(".lateralRButton").on('click', function() {
     if (cIndex < 5){
       inactividad = false;
@@ -133,12 +143,13 @@ $(document).ready(function() {
     }
   }, 1000 / 50);
 
+///TODO: CHECK
   setInterval(function() {
     if(inactividad){
 
       imgIndex += imgDir;
 
-      if (imgIndex >= 5) {
+      if (imgIndex >= 9) {
         imgDir *= -1;
         imgIndex-=1;
       }
@@ -163,6 +174,10 @@ $(document).ready(function() {
   }, 3000);
 
   offsetInit = $('#navbar').offset().top;
+
+  $(".arrow").on("click",function(){
+    gestionaScroll($("#2")[0]);
+  });
 
   if(activateHelper){
     $(".scrollBar").children().hover(function() {
@@ -249,12 +264,10 @@ $(window).bind('mousewheel DOMMouseScroll', function(event) {
 
     if (scrollDown >= scrollNeeded) {
       currentPage++;
-      if (currentPage >= 5) currentPage = 5;
+      if (currentPage >= 6) currentPage = 6;
       gestionaScroll($('#' + currentPage)[0]);
       scrollDown = 0;
-
     }
-
   }
 
   if (window.pageYOffset >= offsetInit) {
@@ -273,14 +286,13 @@ var topBarActivated = function() {
 
 var gestionaScroll = function(elemento) {
   if(scrollIsReady){
-
     scrollNotOver();
     if (elemento.id === "3") {
       $(".scrollBar").css("display", "none");
       $(".HotZone").css("display", "none");
       $(".scrollBarHelper").css("display", "none");
+      $(".scrollBarHelper2").css("display", "none");
       stopAll = true;
-
 
     } else {
       $(".scrollBar").css("display", "block");
@@ -292,6 +304,9 @@ var gestionaScroll = function(elemento) {
       case '2':
 
         $(".mainTitle").css("font-size", titleSize + "px");
+        $("#titleImage").css("height",titleSize +"px");
+        $(".arrow").css("display","none");
+
         $(".mainTitle").css("top", "50%");
         if (lastCase === '1') {
           $(".mainTitle").animate({
@@ -301,6 +316,9 @@ var gestionaScroll = function(elemento) {
             $(".mainTitle").css("display", "none");
             $(".mainTitle2").css("display", "block");
           });
+          $("#titleImage").animate({
+            height: titleResizedSize + 'px'
+          }, animationSpeed, "swing");
         } else {
           $(".mainTitle").css("display", "none");
           $(".mainTitle2").css("display", "block");
@@ -309,7 +327,7 @@ var gestionaScroll = function(elemento) {
         $(".mainSubtitle").css('display', "none");
         $(".scrollBarHelper").children().css("color", "#1c1c1c");
 
-        for (let a = 0; a < 5; a++) {
+        for (let a = 0; a < 6; a++) {
           if ($(".scrollBar").children()[a] !== elemento) {
             $(".scrollBar").children()[a].style.border = "1px solid #1c1c1c";
           } else {
@@ -333,7 +351,7 @@ var gestionaScroll = function(elemento) {
         topBarActivated();
         $(".scrollBarHelper").children().css("color", "#1c1c1c");
 
-        for (let a = 0; a < 5; a++) {
+        for (let a = 0; a < 6; a++) {
           if ($(".scrollBar").children()[a] !== elemento) {
             $(".scrollBar").children()[a].style.border = "1px solid #1c1c1c";
           } else {
@@ -350,7 +368,7 @@ var gestionaScroll = function(elemento) {
       case '4':
         $(".scrollBarHelper").children().css("color", "#1c1c1c");
 
-        for (let a = 0; a < 5; a++) {
+        for (let a = 0; a < 6; a++) {
 
           if ($(".scrollBar").children()[a] !== elemento) {
             $(".scrollBar").children()[a].style.border = "1px solid #1c1c1c";
@@ -381,7 +399,7 @@ var gestionaScroll = function(elemento) {
       case '5':
         $(".scrollBarHelper").children().css("color", "#e4e4e4");
 
-        for (let a = 0; a < 5; a++) {
+        for (let a = 0; a < 6; a++) {
           if ($(".scrollBar").children()[a] !== elemento) {
             $(".scrollBar").children()[a].style.border = "1px solid #e4e4e4";
           } else {
@@ -399,11 +417,30 @@ var gestionaScroll = function(elemento) {
           scrollIsReady = true;
         });
         break;
-      default:
-
+      case '6':
         $(".scrollBarHelper").children().css("color", "#e4e4e4");
 
-        for (let a = 0; a < 5; a++) {
+        for (let a = 0; a < 6; a++) {
+          if ($(".scrollBar").children()[a] !== elemento) {
+            $(".scrollBar").children()[a].style.border = "1px solid #e4e4e4";
+          } else {
+            $(".scrollBar").children()[a].style.border = "";
+          }
+        }
+
+        topBarActivated();
+
+        $("html, body").animate({
+          scrollTop: 5 * ySize
+        }, animationSpeed, "swing",function(){
+          scrollIsReady = true;
+        });
+        break;
+      default:
+        $(".arrow").css("display","block");
+        $(".scrollBarHelper").children().css("color", "#e4e4e4");
+
+        for (let a = 0; a < 6; a++) {
           if ($(".scrollBar").children()[a] !== elemento) {
             $(".scrollBar").children()[a].style.border = "1px solid #e4e4e4";
           } else {
@@ -416,6 +453,7 @@ var gestionaScroll = function(elemento) {
         $(".mainTitle2").css("display", "none");
 
         $(".mainTitle").css("font-size", titleSize + "px");
+        $("#titleImage").css("height",titleSize +"px");
         $(".mainTitle").css("top", "50%");
 
 
@@ -448,6 +486,12 @@ var startImages = function() {
 
   $("#img5").css("margin-left", "0%");
   $("#img6").css("margin-right", "-100%");
+
+  $("#img7").css("margin-left", "-100%");
+  $("#img8").css("margin-right", "-100%");
+
+  $("#img9").css("margin-left", "-100%");
+  $("#img10").css("margin-right", "-100%");
 }
 
 var scrollOver = function() {
@@ -551,6 +595,7 @@ var variaIdioma = function() {
       $('#q2').text("NOSALTRES");
       $('#q3').text("CLIENTS");
       $('#q4').text("MISSIÓ");
+      $('#q5').text("CONTACTE");
       $('#q5').text("CONTACTE");
 
       $('#im1').text("Actors");
