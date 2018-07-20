@@ -171,7 +171,7 @@ $(document).ready(function() {
         secondsGone = 0;
       }
     }
-  }, 1000);
+  }, 3000);
 
   offsetInit = $('#navbar').offset().top;
 
