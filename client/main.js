@@ -115,12 +115,12 @@ $(document).ready(function() {
   });
 
   $(".lateralRButton").on('click', function() {
-    if (cIndex < 5){
+    if (cIndex < 8){
       inactividad = false;
       secondsGone = 0;
       imgDir = 1;
       imgIndex++;
-      if(imgIndex>= 4)imgIndex = 4;
+      if(imgIndex>= 8)imgIndex = 8;
       nextFoto(false);
     }
   });
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
       imgIndex += imgDir;
 
-      if (imgIndex >= 9) {
+      if (imgIndex >= 8) {
         imgDir *= -1;
         imgIndex-=1;
       }
@@ -171,7 +171,7 @@ $(document).ready(function() {
         secondsGone = 0;
       }
     }
-  }, 3000);
+  }, 1000);
 
   offsetInit = $('#navbar').offset().top;
 
@@ -487,10 +487,10 @@ var startImages = function() {
   $("#img5").css("margin-left", "0%");
   $("#img6").css("margin-right", "-100%");
 
-  $("#img7").css("margin-left", "-100%");
+  $("#img7").css("margin-right", "-100%");
   $("#img8").css("margin-right", "-100%");
 
-  $("#img9").css("margin-left", "-100%");
+  $("#img9").css("margin-right", "-100%");
   $("#img10").css("margin-right", "-100%");
 }
 
@@ -512,7 +512,7 @@ var nextFoto = function(esquerra) {
     if (esquerra) {
       //left
 
-      for (let i = cIndex + 2; i <= 6; i++) {
+      for (let i = cIndex + 2; i <= 9; i++) {
         $("#img" + i).hide();
       }
 
@@ -527,7 +527,7 @@ var nextFoto = function(esquerra) {
       $("#img" + (cIndex - 2)).animate({
         "margin-left": "0%"
       }, lateralSpeed, "swing", function() {
-        for (let i = cIndex; i <= 6; i++) {
+        for (let i = cIndex; i <= 9; i++) {
           $("#img" + i).show();
         }
         ready = true;
@@ -567,7 +567,7 @@ var nextFoto = function(esquerra) {
       }, lateralSpeed, "swing");
 
       $("#img" + (cIndex)).css("margin-right", "0%");
-      for (let i = cIndex + 2; i <= 6; i++) {
+      for (let i = cIndex + 2; i <= 9; i++) {
         $("#img" + (i)).hide();
       }
 
