@@ -1,34 +1,4 @@
-Al inci mostrar opcions del idoma. Clickas idoma i tensenya contingut. Angles - catala - español
-
-Els nostres clients
-Amb qui treballem
-    Logo - Tilol - Breu descripcio -
-
-Final de pagina: https://tuelarteyoelpapeleo.com/ Preguntar cristina i joan
-  Direcion i email.
-  Maybe coolaborators.
-  Afegir comparte al fons de la pagina -> Siguenos en facebook
-  Afegir linkedIn al fons de la pagina ->
-
-4 apartats + blogContent
-4 - > contacte ->  plantilla
-
-plantilla es un doc que facilita la feina.
-plantilla preguntar cristina -> format digital o paper
-
-
-Contacte: dades wordpress.
-Contacte - >fitxa = para empezar a trabajar con nosotros introcuce los siguentes datos...
-contacte: añade tus datos a nuestra newsLatter
-  "Mantente actualitzado de las noticias del sector. Inscribete con este formulario"
-
-
-Titol pagina afegir subtitol assesorem persones en el idoma que toca.
-
-Blog.
-  Blog de diferents activitats de la empresa.
-  no comentaris, "para mas informacion envia un mail a este correo"
-  Foto no tan gran com https://tuelarteyoelpapeleo.com/blog . Foto al lateral . Basic format de
-  clients.
-
-  
+Botones laterales hide.
+Enviar mail con server
+Traduccio de cada foto
+Fotos alvin
