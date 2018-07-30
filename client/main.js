@@ -75,9 +75,12 @@ $(document).ready(function() {
   });
 
   $(".idiomaContainer").children().hover(function() {
-    $(this).css("opacity", "1");
+
+
+    $(this).css("opacity", "1");$(this).css("color", "red");
   }, function() {
-    $(this).css("opacity", "0.7");
+    $(this).css("opacity", "1");
+    $(this).css("color", "#e4e4e4");
   });
 
   $(".lateralLButton").hover(function() {
@@ -298,6 +301,7 @@ var gestionaScroll = function(elemento) {
       $(".scrollBar").css("display", "block");
       $(".HotZone").css("display", "block");
       $(".scrollBarHelper").css("display", "block");
+      $(".scrollBarHelper2").css("display", "block");
       stopAll = false;
     }
     switch (elemento.id) {
@@ -338,7 +342,22 @@ var gestionaScroll = function(elemento) {
         $('.textNosaltres').animate({
           top: 175,
           opacity: 1
-        }, 1200, "swing");
+        }, 1200, "swing",function(){
+          setTimeout(function(){
+            $("#tn2").css("visibility","visible");
+            $("#tn2").animate({
+              opacity:1
+            },1200,"swing",function(){
+              setTimeout(function(){
+                $("#tn3").css("visibility","visible");
+                $("#tn3").animate({
+                  opacity:1
+                },1200,"swing");
+              },3000);
+            });
+          },3000);
+        });
+
 
         $("html, body").animate({
           scrollTop: ySize
