@@ -26,8 +26,8 @@ io.sockets.on('connection', function(socket) {
 
   socket.on("MyIpIs",function(data){
 
-    var emailEmiter = 'lomomuch1@gmail.com';
-    var emailEmiterPass = 'fecpdkcmzsonubgp';
+    var emailEmiter = 'actura@actura12.com';
+    var emailEmiterPass = 'Numancia56';
 
     console.log("IP: " + data.ip);
 
@@ -53,15 +53,15 @@ io.sockets.on('connection', function(socket) {
         if(data.idioma === 1){
           //Catala
           subject = "Formulari Actura12";
-          text = "Hem rebut el teu formulari correctament, ens posarem en contacte el mes aviat possible!";
+          text = "Hem rebut el teu formulari correctament, ens posarem en contacte el mes aviat possible.";
         }else if(data.idioma === 2){
           //Angles
           subject = "Actura12 Form";
-          text = "MAIL RESISIT";
+          text = "We have received your form correctly, we will contact you as soon as possible.";
         }else{
           //Castella
           subject = "Formulario Actura12";
-          text = "MAIL RESISIT";
+          text = "Hemos recivido tu formulario correctamente, nos pondremos en contacto lo antes posible.";
         }
 
         var mailOptions = {

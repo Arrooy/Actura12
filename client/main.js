@@ -98,7 +98,7 @@ $(document).ready(function() {
   });
 
   $(".scrollBar").children().on('click', function() {
-    console.log("CLICK");
+    
     currentPage = this.id;
     gestionaScroll(this);
   });
