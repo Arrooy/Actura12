@@ -434,7 +434,7 @@ body {
 }
 
 .btn:hover {
-  background: red;
+  background:linear-gradient(to right, rgba(114, 114, 114, 0.7) , rgba(38, 38, 38, 0.6),rgba(114, 114, 114, 0.7)) ;
 }
 
 .default {
