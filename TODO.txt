@@ -1,4 +1,2 @@
-Botones laterales hide.
+
 Enviar mail con server
-Traduccio de cada foto
-Fotos alvin

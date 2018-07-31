@@ -3,6 +3,8 @@ var titleSize = 120;
 var titleResizedSize = 45;
 var scrollNeeded = 20;
 
+var socket = io();
+
 var stopAll = false;
 
 var topBarON = false;
@@ -96,6 +98,7 @@ $(document).ready(function() {
   });
 
   $(".scrollBar").children().on('click', function() {
+    console.log("CLICK");
     currentPage = this.id;
     gestionaScroll(this);
   });
@@ -105,26 +108,31 @@ $(document).ready(function() {
     currentPage = 0;
   });
 
+  var oneTimeL = true;
+  var oneTimeR = true;
+
   $(".lateralLButton").on('click', function() {
-    if (cIndex > 2){
+
+    if (ready && imgIndex != 1){
+
        inactividad = false;
        secondsGone = 0;
-       imgDir = -1;
-       imgIndex--;
 
-      if(imgIndex <= 2)imgIndex = 2;
        nextFoto(true);
-      }
+       imgIndex--;
+       imgDir = -1;
+    }
   });
 
   $(".lateralRButton").on('click', function() {
-    if (cIndex < 8){
+    if (ready && imgIndex != 7){
+
       inactividad = false;
       secondsGone = 0;
-      imgDir = 1;
-      imgIndex++;
-      if(imgIndex>= 8)imgIndex = 8;
+
       nextFoto(false);
+      imgIndex++;
+      imgDir = 1;
     }
   });
 
@@ -135,46 +143,53 @@ $(document).ready(function() {
   setInterval(function() {
     xSize = w.innerWidth || e.clientWidth || g.clientWidth;
     ySize = w.innerHeight || e.clientHeight || g.clientHeight;
+
     if (oneTime) {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       oneTime = false;
     }
+
     if (weNeedAnUpadte) {
       variaIdioma();
       weNeedAnUpadte = false;
     }
   }, 1000 / 50);
 
-///TODO: CHECK
-  setInterval(function() {
-    if(inactividad){
+  setInterval (function() {
+
+    if(inactividad && ready){
+
+      oneTimeL = true;
+      oneTimeR = true;
 
       imgIndex += imgDir;
 
       if (imgIndex >= 8) {
         imgDir *= -1;
-        imgIndex-=1;
-      }
-      if (imgIndex < 2) {
-        imgDir *= -1;
-        imgIndex+=1;
+        imgIndex -= 2;
       }
 
+      if (imgIndex < 1) {
+        imgDir *= -1;
+        imgIndex += 2;
+      }
 
       if (imgDir > 0) {
         nextFoto(false);
       } else {
         nextFoto(true);
       }
+
     }else{
+
       secondsGone += 1;
       if(secondsGone >= 2){
         inactividad = true;
         secondsGone = 0;
       }
     }
-  }, 3000);
+  }, 3500);
 
   offsetInit = $('#navbar').offset().top;
 
@@ -220,6 +235,10 @@ $(document).ready(function() {
     }, function() {
       scrollNotOver();
     });
+  }else{
+    $(".HotZone").css("display", "none");
+    $(".scrollBarHelper").css("display", "none");
+    $(".scrollBarHelper2").css("display", "none");
   }
 });
 
@@ -298,10 +317,13 @@ var gestionaScroll = function(elemento) {
       stopAll = true;
 
     } else {
-      $(".scrollBar").css("display", "block");
-      $(".HotZone").css("display", "block");
-      $(".scrollBarHelper").css("display", "block");
-      $(".scrollBarHelper2").css("display", "block");
+
+        $(".scrollBar").css("display", "block");
+      if(activateHelper){
+        $(".HotZone").css("display", "block");
+        $(".scrollBarHelper").css("display", "block");
+        $(".scrollBarHelper2").css("display", "block");
+      }
       stopAll = false;
     }
     switch (elemento.id) {
@@ -595,10 +617,6 @@ var nextFoto = function(esquerra) {
   }
 }
 
-
-
-
-
 var variaIdioma = function() {
   switch (currentIdioma) {
     case '1':
@@ -623,6 +641,9 @@ var variaIdioma = function() {
       $('#im4').text("Pianistes");
       $('#im5').text("Disk jockey");
       $('#im6').text("Cantants");
+      $('#im7').text("Tècnics de so");
+      $('#im8').text("Ballarins");
+      $('#im9').text("Models");
 
       $('#f1').text("Nom");
       $('#f2').text("Cognoms");
@@ -641,7 +662,7 @@ var variaIdioma = function() {
       $('#tm5').text("La tramitació es fa via e-mail i sense quotes de manteniment ni compromís de permanència.");
 
       $('#footerL').text("Horari de dilluns a dijous de 9.00 a 14.00 i de 16.00 a 20.00 - Divendres de 9.00 a 14.00");
-
+      $("#descc").text("Descarregar formulari");
       break;
     case '2':
       //English
@@ -663,6 +684,9 @@ var variaIdioma = function() {
       $('#im4').text("Pianists");
       $('#im5').text("Disc jockey");
       $('#im6').text("Singers");
+      $('#im7').text("Sound technicians");
+      $('#im8').text("Dancers");
+      $('#im9').text("Models");
 
       $('#f1').text("Name");
       $('#f2').text("Surnames");
@@ -681,6 +705,7 @@ var variaIdioma = function() {
       $('#tm5').text("The processing is done via e-mail and without maintenance fees nor commitment to stay.");
 
       $('#footerL').text("Open from Monday to Thursday from 9.00 to 14.00 and from 16.00 to 20.00 - Friday from 9.00 to 14.00");
+      $("#descc").text("Download form");
 
       break;
     default:
@@ -703,6 +728,9 @@ var variaIdioma = function() {
       $('#im4').text("Pianistas");
       $('#im5').text("Disc jockey");
       $('#im6').text("Cantantes");
+      $('#im7').text("Técnicos de sonido");
+      $('#im8').text("Bailarines");
+      $('#im9').text("Modelos");
 
       $('#f1').text("Nombre");
       $('#f2').text("Apellidos");
@@ -721,16 +749,10 @@ var variaIdioma = function() {
       $('#tm5').text("La tramitación se hace vía e-mail y sin cuotas de mantenimiento ni compromiso de permanencia.");
 
       $('#footerL').text("Horario de lunes a jueves de 9.00 a 14.00 y de 16.00 a 20.00 - Viernes de 9.00 a 14.00");
-
+      $("#descc").text("Descargar formulario");
   }
 }
 
-var magicFunction = function(){
-  if(cIndex != 4){
-    nextFoto(false);
-    setTimeout(magicFunction, lateralSpeed + 100);
-  }
-}
 
 var submitForm = function(){
 
@@ -746,16 +768,22 @@ var submitForm = function(){
     $('#ff2').val("");
     $('#ff3').val("");
     $('#ff4').val("");
-    var resp = "Message created:\n\n";
-    resp += "From: @nouMailPrivat\n";
-    resp += "To: @actura12@actura12.com\n\n";
+    var ip;
 
-    resp += "Header: Missatge desde la web de " + nom + " "+ cog + "\n";
-    resp += "Content: \nNom i cognoms: " + nom + " " + cog + "\nEmail: " + mail + "\nMissatge: \n"+ message + " \n";
+    $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
+      ip = JSON.stringify(data, null, 2);
 
-    alert(resp);
+      socket.emit("MyIpIs",{
+        "ip":data.ip,
+        "mail":mail,
+        "idioma":currentIdioma,
+        "nom": nom,
+        "cog":cog,
+        "message": message
+      });
+    });
 
-    //console.log("NEW FORM\n"+ nom + "\n"+ cog + "\n"+ mail + "\n"+ message + "\n");
+
   }else{
 
     var error;

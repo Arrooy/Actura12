@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400|Raleway:200,700" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 	<script src="./client/main.js"></script>
 
 	<title>Actura12 - Assessorem persones</title>
@@ -97,7 +98,7 @@
 			</div>
 
 			<div id="img2" class="imageComplex">
-				<img class="clientsImage" src="/client/ca/img/CLIENTS 2.jpg" />
+				<img class="clientsImage" src="/client/ca/img/PHOTOGRAPHER.jpg" />
 				<h4 class="fotoFooter" id="im2">Fotògrafs</h4>
 			</div>
 
@@ -122,17 +123,17 @@
 			</div>
 
 			<div id="img7" class="imageComplex">
-				<img class="clientsImage" src="/client/ca/img/CLIENTS 7.jpg" />
+				<img class="clientsImage" src="/client/ca/img/t1.jpg" />
 				<h4 class="fotoFooter" id="im7">Tècnics de so</h4>
 			</div>
 
 			<div id="img8" class="imageComplex">
-				<img class="clientsImage" src="/client/ca/img/CLIENTS 8.jpg" />
+				<img class="clientsImage" src="/client/ca/img/b1.jpg" />
 				<h4 class="fotoFooter" id="im8">Ballarins</h4>
 			</div>
 
 			<div id="img9" class="imageComplex">
-				<img class="clientsImage" src="/client/ca/img/CLIENTS 9.jpg" />
+				<img class="clientsImage" src="/client/ca/img/MODEL.jpg" />
 				<h4 class="fotoFooter" id="im9">Models</h4>
 			</div>
 		</div>
@@ -156,16 +157,16 @@
 		<h3 class="titleSpecialBlanc mtitleSpecial noSelec" id="titleContacte">CONTACTE</h3>
 		<div class="Formulari">
 			<h4 class="FormulariTitle noSelec" id="f1">Nom</h4>
-			<input class="inputForm" type="text" id="ff1">
+			<input class="inputForm" autocomplete="given-name" type="text" id="ff1">
 			<h4 class="FormulariTitle noSelec" id="f2">Cognoms</h4>
-			<input class="inputForm" type="text" id="ff2">
+			<input class="inputForm" autocomplete="family-name" type="text" id="ff2">
 			<h4 class="FormulariTitle noSelec" id="f3">E-mail</h4>
-			<input class="inputForm" type="email" id="ff3">
+			<input class="inputForm" autocomplete="email" type="email" id="ff3">
 			<h4 class="FormulariTitle noSelec" id="f4">Missatge</h4>
 			<textarea name="message" rows="4" cols="30" class="inputForm margin" id="ff4"></textarea>
 			<button class="btn default" id="f5">Enviar</button>
 			<form method="get" action="/client/ca/fitxaTreballador.pdf">
-			 <button class="btn default" style="margin-top:25px;" type="submit">Descarregar formulari</button>
+			 <button id= "descc"class="btn default" style="margin-top:25px;" type="submit">Descarregar formulari</button>
 			</form>
 		</div>
 	</div>
