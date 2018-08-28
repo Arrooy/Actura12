@@ -7,7 +7,7 @@ app.get('/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-app.get(/(contacto\/?|castellano\/?|contacte\/?|catala\/?|quienes-somos\/?|home\/?|blog\/?)/,function(req, res) {
+app.get(/(contacto\/?|castellano\/?|contacte\/?|catala\/?|quienes-somos\/?|home\/?|blog\/?|como-funcionamos\/?)/,function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 })
 
