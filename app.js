@@ -3,12 +3,11 @@ var app = express();
 var nodemailer = require('nodemailer');
 var serv = require('http').Server(app);
 
-app.get('/', function(req, res) {
+app.get('/D,function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-
-app.get('/phone', function(req, res) {
+app.get('/d', function(req, res) {
   res.sendFile(__dirname + '/client/indexPhone.html');
 });
 
