@@ -3,7 +3,7 @@ var app = express();
 var nodemailer = require('nodemailer');
 var serv = require('http').Server(app);
 
-app.get('/[a-zA-Z]*',function(req, res) {
+app.get('/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
