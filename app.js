@@ -12,6 +12,8 @@ app.get(/(contacto|castellano|contacte|catala|quienes-somos|home|blog)/,function
   res.sendFile(__dirname + '/client/ca/index.html');
 });*/
 app.get('/contacto/',function(req, res) {
+  
+  console.log(__dirname + " .> RIDASDAÑSKfal lc alsc");
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
