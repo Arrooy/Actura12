@@ -8,7 +8,7 @@ app.get('/',function(req, res) {
 });
 
 app.get('/phone',function(req, res) {
-  res.sendFile(__dirname + '/client/ca/indexPhone.html');
+  res.sendFile(__dirname + '/client/indexPhone.html');
 });
 
 app.use('/client', express.static(__dirname + '/client'));
