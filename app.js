@@ -3,11 +3,15 @@ var app = express();
 var nodemailer = require('nodemailer');
 var serv = require('http').Server(app);
 
-app.get('/D',function(req, res) {
+app.get('/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-app.get('/d', function(req, res) {
+app.get('/[a-zA-Z]*',function(req, res) {
+  res.sendFile(__dirname + '/client/ca/index.html');
+});
+
+app.get('/1', function(req, res) {
   res.sendFile(__dirname + '/client/indexPhone.html');
 });
 
