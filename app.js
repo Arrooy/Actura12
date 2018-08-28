@@ -4,6 +4,7 @@ var nodemailer = require('nodemailer');
 var serv = require('http').Server(app);
 
 app.get('/',function(req, res) {
+  console.log(__dirname + " .> RIDASDAÑSKfal lc alsc");
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 /*
