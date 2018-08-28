@@ -7,11 +7,11 @@ app.get('/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-app.get('/\D{1}',function(req, res) {
+app.get('/\D{1}/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-app.get('/\d{1}', function(req, res) {
+app.get('/\d{1}/', function(req, res) {
   res.sendFile(__dirname + '/client/indexPhone.html');
 });
 
