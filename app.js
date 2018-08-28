@@ -4,16 +4,10 @@ var nodemailer = require('nodemailer');
 var serv = require('http').Server(app);
 
 app.get('/',function(req, res) {
-  console.log(__dirname + " .> RIDASDAÑSKfal lc alsc");
   res.sendFile(__dirname + '/client/ca/index.html');
 });
-/*
-app.get(/(contacto|castellano|contacte|catala|quienes-somos|home|blog)/,function(req, res) {
-  res.sendFile(__dirname + '/client/ca/index.html');
-});*/
-app.get('/contacto/',function(req, res) {
-  
-  console.log(__dirname + " .> RIDASDAÑSKfal lc alsc");
+
+app.get(/(contacto\/|castellano\/|contacte\/|catala\/|quienes-somos\/|home\/|blog\/)/,function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
@@ -38,10 +32,8 @@ io.sockets.on('connection', function(socket) {
     var emailEmiter = 'actura@actura12.com';
     var emailEmiterPass = 'Numancia56';
 
-    console.log("IP: " + data.ip);
-
     if(ipList.indexOf(data.ip) === -1){
-      console.log("NEW IP DETECTED");
+   
 
       var mailOK = data.mail.indexOf("@") !== -1 && data.mail.indexOf(".") !== -1 && data.mail.length >= 5;
       var allGood = mailOK && data.nom.length !== 0 && data.cog.length !== 0 && data.message.length !== 0;
