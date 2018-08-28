@@ -4,14 +4,17 @@ var nodemailer = require('nodemailer');
 var serv = require('http').Server(app);
 
 app.get('/',function(req, res) {
+  console.log("NORMAL_LINK");
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
 app.get(/\D{1}/,function(req, res) {
+  console.log("GOOOGLE_LINK");
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
 app.get(/\d{1}/, function(req, res) {
+  console.log("PHONE_LINK");
   res.sendFile(__dirname + '/client/indexPhone.html');
 });
 
