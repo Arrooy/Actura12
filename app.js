@@ -7,9 +7,9 @@ app.get('/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-app.get(/(contacto\/|castellano\/|contacte\/|catala\/|quienes-somos\/|home\/|blog\/)/,function(req, res) {
+app.get(/(contacto\/?|castellano\/?|contacte\/?|catala\/?|quienes-somos\/?|home\/?|blog\/?)/,function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
-});
+})
 
 app.get('/phone',function(req, res) {
   res.sendFile(__dirname + '/client/indexPhone.html');
