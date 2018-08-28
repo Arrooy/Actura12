@@ -8,15 +8,15 @@ app.get('/',function(req, res) {
   res.sendFile(__dirname + '/client/ca/index.html');
 });
 
-app.get(/\D{1}/,function(req, res) {
+app.get(/^[a-zA-Z]+.$/,function(req, res) {
   console.log("GOOOGLE_LINK");
   res.sendFile(__dirname + '/client/ca/index.html');
 });
-
-app.get(/\d{1}/, function(req, res) {
+/*
+app.get(/\d+/, function(req, res) {
   console.log("PHONE_LINK");
   res.sendFile(__dirname + '/client/indexPhone.html');
-});
+});*/
 
 app.use('/client', express.static(__dirname + '/client'));
 
