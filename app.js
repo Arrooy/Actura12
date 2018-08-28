@@ -83,7 +83,7 @@ io.sockets.on('connection', function(socket) {
           from: emailEmiter,
           to: emailEmiter,
           subject: "Formulari de " + data.nom + " " + data.cog,
-          html: "<p>NOM: " + data.nom + " " + data.cog  + "</p><p> Email: "+ data.mail + "</p>" +
+          html: "<p>Nom: " + data.nom + " " + data.cog  + "</p><p> Email: "+ data.mail + "</p>" +
           "<p> Missatge: "+ data.message + "</p>"
         };
 
