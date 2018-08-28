@@ -40,7 +40,7 @@ var w = window,
   ySize = w.innerHeight || e.clientHeight || g.clientHeight;
 
 if(xSize < 600 || ySize < 520){
-  document.location.href = "phone";
+  document.location.href = "1";
   phoneOn = true;
 }else if(phoneOn){
   document.location.href = "";
