@@ -331,7 +331,7 @@ body {
 .textNosaltres {
   word-wrap: break-word;
   font-family: 'Raleway';
-  font-weight: 200;
+  font-weight: 500;
   text-align: justify;
   position: absolute;
   top: 90%;
@@ -343,7 +343,7 @@ body {
 .textMissio {
   word-wrap: break-word;
   font-family: 'Raleway';
-  font-weight: 200;
+  font-weight: 500;
   text-align: justify;
   opacity: 0;
   box-sizing: content-box;
