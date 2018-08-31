@@ -74,9 +74,10 @@ $(document).ready(function() {
   $(".idiomaContainer").children().on('click', function() {
       weNeedAnUpadte = true;
       currentIdioma = this.id.substring(1);
-  });
+  })
 
-  $(".idiomaContainer").children().hover(function() {
+
+    $(".idiomaContainer").children().hover(function() {
 
 
     $(this).css("opacity", "1");$(this).css("color", "red");
@@ -628,12 +629,14 @@ var variaIdioma = function() {
       $('#titleMissio').text("Missió");
       $('#titleContacte').text("Contacte");
 
+      $('#formForm').attr('action', '/client/ca/Fitxa d\'alta TREBALLADOR.docx');
+
       $('#q1').text("INICI");
       $('#q2').text("NOSALTRES");
       $('#q3').text("CLIENTS");
       $('#q4').text("MISSIÓ");
-      $('#q5').text("CONTACTE");
-      $('#q5').text("CONTACTE");
+      $('#q5').text("FORMULARI");
+      $('#q6').text("CONTACTE");
 
       $('#im1').text("Actors");
       $('#im2').text("Guitarristes");
@@ -676,8 +679,10 @@ var variaIdioma = function() {
       $('#q2').text("ABOUT US");
       $('#q3').text("CLIENTS");
       $('#q4').text("MISSION");
+      $('#q5').text("FORM");
       $('#q5').text("CONTACT");
 
+      $('#formForm').attr('action', '/client/ca/FICHA alta TRABAJADOR.docx');
       $('#im1').text("Actors");
       $('#im2').text("Guitarists");
       $('#im3').text("Film producers");
@@ -716,11 +721,17 @@ var variaIdioma = function() {
       $('#titleMissio').text("Misión");
       $('#titleContacte').text("Contacto");
 
+
+
+      $('#formForm').attr('action', '/client/ca/FICHA alta TRABAJADOR.docx');
+
       $('#q1').text("INICIO");
       $('#q2').text("NOSOTROS");
       $('#q3').text("CLIENTES");
       $('#q4').text("MISIÓN");
-      $('#q5').text("CONTACTO");
+      $('#q5').text("FORMULARIO");
+
+      $('#q6').text("CONTACTO");
 
       $('#im1').text("Actores");
       $('#im2').text("Guitarristas");
