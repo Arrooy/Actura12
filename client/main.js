@@ -680,7 +680,7 @@ var variaIdioma = function() {
       $('#q3').text("CLIENTS");
       $('#q4').text("MISSION");
       $('#q5').text("FORM");
-      $('#q5').text("CONTACT");
+      $('#q6').text("CONTACT");
 
       $('#formForm').attr('action', '/client/ca/FICHA alta TRABAJADOR.docx');
       $('#im1').text("Actors");
@@ -730,7 +730,6 @@ var variaIdioma = function() {
       $('#q3').text("CLIENTES");
       $('#q4').text("MISIÓN");
       $('#q5').text("FORMULARIO");
-
       $('#q6').text("CONTACTO");
 
       $('#im1').text("Actores");
