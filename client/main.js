@@ -748,7 +748,7 @@ var variaIdioma = function() {
       $('#f4').text("Mensaje");
       $('#f5').text("Enviar");
 
-      $('#tn1').text("Somos una asesoría jurídica i empresarial que lleva 25 años asesorando a sus clientes de manera personalizada y eficaz. Nuestra peculiar forma de trabajar consiste en acompañarlos durante todo su proyecto de vida laboral con una implicación rigurosa e individualizada haciendo nuestra sus inquietudes.");
+      $('#tn1').text("Somos una asesoría jurídica y empresarial que lleva 25 años asesorando a sus clientes de manera personalizada y eficaz. Nuestra peculiar forma de trabajar consiste en acompañarlos durante todo su proyecto de vida laboral con una implicación rigurosa e individualizada haciendo nuestra sus inquietudes.");
       $('#tn2').text("A raíz de la demanda de consultas sobre la optimización y reducción de los costes fiscales y laborales del mundo escénico, nos motivó a especializarnos en este sector. Así en 2012 nace ACTURA 12, una empresa dedicada a solucionar las necesidades de los artistas.");
       $('#tn3').text("Trabajamos en la gestión e innovación de todas las facetas del mundo artístico con el objetivo de acompañar a los profesionales del sector en su trabajo, simplificando todos los trámites administrativos, fiscales y laborales con los que se enfrentan.");
 
