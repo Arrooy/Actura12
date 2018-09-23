@@ -99,7 +99,7 @@ $(document).ready(function() {
   });
 
   $(".scrollBar").children().on('click', function() {
-    
+
     currentPage = this.id;
     gestionaScroll(this);
   });
@@ -196,6 +196,9 @@ $(document).ready(function() {
 
   $(".arrow").on("click",function(){
     gestionaScroll($("#2")[0]);
+  });
+  $(".arrow2").on("click",function(){
+    gestionaScroll($("#4")[0]);
   });
 
   if(activateHelper){
@@ -400,6 +403,7 @@ var gestionaScroll = function(elemento) {
             $(".scrollBar").children()[a].style.border = "";
           }
         }
+          $(".arrow2").css("display","block");
 
         $("html, body").animate({
           scrollTop: 2 * ySize
@@ -408,6 +412,7 @@ var gestionaScroll = function(elemento) {
         });
         break;
       case '4':
+        $(".arrow").css("display","none");
         $(".scrollBarHelper").children().css("color", "#1c1c1c");
 
         for (let a = 0; a < 6; a++) {
@@ -629,7 +634,7 @@ var variaIdioma = function() {
       $('#titleMissio').text("Missió");
       $('#titleContacte').text("Contacte");
 
-      $('#formForm').attr('action', '/client/ca/Fitxa d\'alta TREBALLADOR.docx');
+      $('#formForm').attr('action', "/client/ca/Fitxa_d'alta_treballador.docx");
 
       $('#q1').text("INICI");
       $('#q2').text("NOSALTRES");
@@ -682,7 +687,7 @@ var variaIdioma = function() {
       $('#q5').text("FORM");
       $('#q6').text("CONTACT");
 
-      $('#formForm').attr('action', '/client/ca/FICHA alta TRABAJADOR.docx');
+      $('#formForm').attr('action', '/client/ca/Ficha_alta_trabajador.docx');
       $('#im1').text("Actors");
       $('#im2').text("Guitarists");
       $('#im3').text("Film producers");
@@ -723,7 +728,7 @@ var variaIdioma = function() {
 
 
 
-      $('#formForm').attr('action', '/client/ca/FICHA alta TRABAJADOR.docx');
+      $('#formForm').attr('action', '/client/ca/Ficha_alta_trabajador.docx');
 
       $('#q1').text("INICIO");
       $('#q2').text("NOSOTROS");
