@@ -633,6 +633,8 @@ var variaIdioma = function() {
       $('#titleClients').text("Clients");
       $('#titleMissio').text("Missió");
       $('#titleContacte').text("Contacte");
+      $('#titleFormulari_').text("Formulari");
+      
 
       $('#formForm').attr('action', "/client/ca/Fitxa_d'alta_treballador.docx");
 
@@ -678,8 +680,9 @@ var variaIdioma = function() {
       $('#titleNosaltres').text("About Us");
       $('#titleClients').text("Clients");
       $('#titleMissio').text("Mission");
+      $('#titleFormulari_').text("Form");
       $('#titleContacte').text("Contact");
-
+      
       $('#q1').text("WELCOME");
       $('#q2').text("ABOUT US");
       $('#q3').text("CLIENTS");
@@ -724,9 +727,9 @@ var variaIdioma = function() {
       $('#titleNosaltres').text("Nosotros");
       $('#titleClients').text("Clientes");
       $('#titleMissio').text("Misión");
+      $('#titleFormulari_').text("Formulario");
+      
       $('#titleContacte').text("Contacto");
-
-
 
       $('#formForm').attr('action', '/client/ca/Ficha_alta_trabajador.docx');
 
