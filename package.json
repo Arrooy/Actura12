@@ -9,7 +9,7 @@
     "node": "8.1.4"
   },
   "dependencies": {
-    "express": "^4.13.4",
+    "express": "^4.17.3",
     "nodemailer": "^6.4.16",
     "socket.io": "^2.4.0"
   },
